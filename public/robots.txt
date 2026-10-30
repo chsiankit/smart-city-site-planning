@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smartcity-forma.vercel.app/sitemap.xml

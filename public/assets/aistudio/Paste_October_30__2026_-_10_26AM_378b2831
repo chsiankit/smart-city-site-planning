@@ -1,0 +1,1510 @@
+# MASTER AUTONOMOUS DEVELOPMENT PROMPT
+## SMART CITY SITE PLANNING — SIH26114
+### Production-Ready Interactive Project Showcase Platform
+
+---
+
+# 1. YOUR ROLE
+
+Act as a Senior Full-Stack Software Architect, UI/UX Designer, Geospatial Engineer, Data Visualization Specialist, and DevOps Engineer.
+
+You are responsible for independently designing, developing, testing, debugging, and preparing a complete production-quality website.
+
+Do not behave like a code-generation assistant that merely provides snippets.
+
+You must operate as an autonomous development agent.
+
+Your responsibility includes:
+
+1. Inspecting the existing workspace.
+2. Creating a complete development plan.
+3. Designing the architecture.
+4. Creating all necessary source files.
+5. Installing dependencies.
+6. Implementing every requested feature.
+7. Connecting available APIs and services.
+8. Testing all user interactions.
+9. Fixing runtime, TypeScript, and build errors.
+10. Running production builds.
+11. Preparing deployment configuration.
+12. Starting the development server.
+13. Providing a final implementation report.
+
+Do not stop after generating the homepage.
+
+Do not leave buttons, navigation items, forms, charts, or interactive elements non-functional.
+
+If a feature requires credentials, configure the integration using environment variables and provide a working fallback/demo state without inventing real data.
+
+Your final goal is a website that requires only the team's authentic project information, credentials where applicable, and deployment configuration before publication.
+
+---
+
+# 2. PROJECT IDENTITY
+
+Project Name:
+
+Smart City Site Planning Using Autodesk Forma Site Design
+
+Competition: Smart India Hackathon (SIH)
+
+Problem Statement ID: SIH26114
+
+Organization: Autodesk Education Experience
+
+Category: Software
+
+Theme: Miscellaneous
+
+## Project Objective
+
+Develop a comprehensive smart-city development proposal covering a minimum area of 1 km² using Autodesk Forma Site Design for site planning, environmental analysis, and comparative design evaluation, followed by detailed building development using Autodesk Revit.
+
+The project should demonstrate how intelligent urban planning can address rapid urbanization, environmental sustainability, transportation efficiency, infrastructure development, and urban resilience.
+
+## Mandatory Project Components
+
+- Site Limits
+- Landscaping
+- Buildings
+- Transportation
+
+## Autodesk Forma Analysis Modules
+
+The project must present the team's actual results for:
+
+1. Area Metrics
+2. Embodied Carbon
+3. Sun Hours
+4. Daylight Potential
+5. Wind Analysis
+6. Microclimate Analysis
+7. Noise Analysis
+8. Solar Energy
+
+## Required Deliverables
+
+- Autodesk Forma project containing at least two design proposals.
+- Forma Board comparison.
+- Exported Site BIM model.
+- Revit building drawing block.
+- Five-to-seven-slide presentation.
+- Authentic project screenshots.
+- Rendered images produced by the team using the permitted software.
+- Thirty-second project walkthrough video.
+
+IMPORTANT: The website presents the team's original project work. It must never pretend that website-generated simulations are actual Autodesk Forma results.
+
+---
+
+# 3. NON-NEGOTIABLE AUTHENTICITY AND DATA POLICY
+
+This is a competition project.
+
+Accuracy and authenticity are more important than visual completeness.
+
+STRICT RULES:
+
+1. Never invent site coordinates, site area, buildings, environmental readings, analysis values, proposal results, or team information.
+2. Never fabricate Autodesk Forma screenshots.
+3. Never generate AI-based architectural renders.
+4. Never use AI-generated images, illustrations, or visualizations as project deliverables.
+5. Never represent OpenStreetMap, weather API, or third-party information as Autodesk Forma analysis.
+6. Never claim that a Revit model has been exported or synchronized unless the team provides evidence.
+7. Never claim that an API result is verified project data without appropriate provenance.
+8. Clearly distinguish actual project information, external contextual information, calculated values, and placeholders.
+
+Every missing field must have an appropriate placeholder.
+
+Examples:
+
+- Add your Forma screenshot here
+- Add Proposal A render
+- Add verified site coordinates
+- Add actual embodied carbon value
+- Add Revit model screenshot
+- Data not provided
+- Not yet completed
+
+Use a visible source label for every important metric:
+
+- TEAM VERIFIED
+- LIVE API DATA
+- CALCULATED FROM PROVIDED DATA
+- PLACEHOLDER
+- NOT AVAILABLE
+
+Display this statement prominently in the footer and About page:
+
+"Original work made in Autodesk Forma - no AI-generated content."
+
+Do not use generated placeholder architecture or fake project imagery.
+
+Use hand-coded CSS, SVG architectural patterns, grid layouts, and abstract geometric decorations instead.
+
+---
+
+# 4. AUTONOMOUS DEVELOPMENT WORKFLOW
+
+Before implementation, print a concise development plan and proposed file structure.
+
+Then implement the entire project.
+
+Follow this sequence:
+
+PHASE 1 — Workspace inspection and architecture.
+
+PHASE 2 — Dependency installation and application setup.
+
+PHASE 3 — Design system and reusable components.
+
+PHASE 4 — Data architecture and API integrations.
+
+PHASE 5 — Main pages and routing.
+
+PHASE 6 — Interactive features and calculations.
+
+PHASE 7 — Authentication-free admin/editing interface.
+
+PHASE 8 — Testing and accessibility.
+
+PHASE 9 — Production optimization.
+
+PHASE 10 — Deployment preparation.
+
+Do not ask for information that can safely be represented by editable placeholders.
+
+Do not stop to request approval after every phase.
+
+If an external service is unavailable, implement the integration interface and graceful fallback rather than abandoning the feature.
+
+---
+
+# 5. TECHNOLOGY STACK
+
+Use:
+
+Frontend:
+- React 18
+- Vite
+- TypeScript with strict mode
+- React Router
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Data visualization:
+- Recharts
+- Responsive charts
+- Interactive legends
+- Tooltips
+- Downloadable chart images where practical
+
+Maps:
+- Leaflet
+- React Leaflet
+- OpenStreetMap
+- GeoJSON support
+- Polygon area calculations
+- Site boundary overlays
+
+Utilities:
+- Zod for runtime validation
+- React Hook Form
+- jsPDF
+- html2canvas
+- date-fns
+- TanStack Query for API requests and caching
+
+Testing:
+- Vitest
+- React Testing Library
+- Playwright for end-to-end tests
+
+Code quality:
+- ESLint
+- Prettier
+- Strict TypeScript
+- Reusable components
+- Error boundaries
+
+Deployment:
+- Vercel-ready configuration
+- Netlify-ready configuration
+- GitHub Pages compatibility where practical
+
+Use stable, compatible package versions.
+
+Do not install unnecessary libraries.
+
+---
+
+# 6. VISUAL DESIGN SYSTEM
+
+Create a premium urban-technology design.
+
+The website should feel like a professional architectural consultancy platform combined with a modern smart-city dashboard.
+
+Design characteristics:
+
+- Deep navy background.
+- Teal and cyan highlights.
+- Warm amber accent.
+- White and soft-grey surfaces.
+- Architectural grid patterns.
+- Subtle glass effects.
+- Generous whitespace.
+- Rounded cards.
+- Crisp typography.
+- Minimal visual clutter.
+- Smooth but restrained animations.
+
+Suggested design tokens:
+
+Primary: #102A43
+Secondary: #0F766E
+Accent: #E8A34A
+Background Light: #F5F8FA
+Background Dark: #091521
+Surface: #FFFFFF
+Text: #172B3A
+
+Create consistent tokens in Tailwind configuration.
+
+Use CSS/SVG-based architectural decorations.
+
+Do not use generic AI-generated city illustrations.
+
+The interface must be responsive at:
+
+- 360px mobile
+- 390px mobile
+- 768px tablet
+- 1024px laptop
+- 1440px desktop
+- 1920px large displays
+
+---
+
+# 7. APPLICATION ARCHITECTURE
+
+Use a modular folder structure.
+
+Suggested structure:
+
+src/
+  app/
+    App.tsx
+    router.tsx
+    providers.tsx
+
+  components/
+    common/
+    layout/
+    navigation/
+    cards/
+    charts/
+    maps/
+    forms/
+    gallery/
+    comparison/
+    dashboard/
+
+  pages/
+    Home.tsx
+    SiteOverview.tsx
+    Proposals.tsx
+    Analysis.tsx
+    Compare.tsx
+    SmartCity.tsx
+    RevitBIM.tsx
+    Gallery.tsx
+    Tracker.tsx
+    TeamResources.tsx
+    About.tsx
+    Contact.tsx
+    Admin.tsx
+    NotFound.tsx
+
+  data/
+    project.json
+    schema.ts
+    defaults.ts
+
+  hooks/
+    useTheme.ts
+    useLocalStorage.ts
+    useGlobalSearch.ts
+    useProjectData.ts
+
+  services/
+    api/
+    weather/
+    geospatial/
+    maps/
+    project/
+    export/
+
+  utils/
+    polygonArea.ts
+    scoring.ts
+    validation.ts
+    pdf.ts
+    formatting.ts
+
+  styles/
+    globals.css
+    tokens.css
+    print.css
+
+  tests/
+
+public/
+  images/
+    forma/
+    proposals/
+    analysis/
+    renders/
+    revit/
+    team/
+
+  videos/
+  favicon.svg
+  robots.txt
+  sitemap.xml
+
+README.md
+.env.example
+package.json
+vite.config.ts
+tailwind.config.js
+tsconfig.json
+vercel.json
+
+You may improve this structure if necessary.
+
+---
+
+# 8. CENTRAL PROJECT DATA SYSTEM
+
+All project-specific content must come from a central editable JSON file.
+
+File:
+
+/src/data/project.json
+
+Create a strongly typed TypeScript schema and Zod runtime validation.
+
+Include these sections:
+
+{
+  "project": {},
+  "site": {},
+  "context": {},
+  "mandatoryElements": [],
+  "proposals": [],
+  "analyses": {},
+  "comparison": {},
+  "team": [],
+  "mentor": {},
+  "timeline": [],
+  "gallery": [],
+  "video": {},
+  "revit": {},
+  "submission": {},
+  "resources": [],
+  "contact": {}
+}
+
+Requirements:
+
+- Support up to four proposals.
+- Support missing fields.
+- Support optional images.
+- Support GeoJSON site boundaries.
+- Support multiple metric units.
+- Support evidence URLs.
+- Support data source labels.
+- Support analysis-specific insights.
+- Support proposal-specific datasets.
+
+Create a friendly validation page listing:
+
+- Missing required fields.
+- Invalid numbers.
+- Incorrect coordinate formats.
+- Invalid image paths.
+- Missing proposal IDs.
+- Invalid URLs.
+- Inconsistent measurement units.
+
+A malformed optional field should not crash the entire website.
+
+Provide safe defaults.
+
+Do not hardcode project metrics across components.
+
+---
+
+# 9. LIVE API AND EXTERNAL DATA INTEGRATIONS
+
+This is a major requirement.
+
+Connect useful real-world services wherever technically and legally possible.
+
+Do not create fake API connectivity.
+
+Do not claim that an integration works until a real request has been tested.
+
+## A. OpenStreetMap
+
+Use OpenStreetMap as the map tile provider.
+
+Use Overpass API where suitable to retrieve available contextual geographic features:
+
+- Nearby roads.
+- Existing buildings.
+- Green spaces.
+- Parks.
+- Water bodies.
+- Transport infrastructure.
+- Relevant public amenities.
+
+Allow the team to visualize contextual features around the site.
+
+Important:
+
+OpenStreetMap data is external context, not an Autodesk Forma analysis result.
+
+Display attribution and data timestamps.
+
+Implement:
+- Loading states.
+- API errors.
+- Request throttling.
+- Caching.
+- Retry handling.
+- Empty states.
+
+Do not assume the Overpass API is always available.
+
+## B. Weather API
+
+Integrate Open-Meteo where available.
+
+Retrieve:
+
+- Temperature.
+- Wind speed.
+- Wind direction.
+- Relative humidity.
+- Precipitation.
+- Weather conditions.
+- Historical climate information where supported.
+
+Use site coordinates from project.json.
+
+Display source and timestamp.
+
+These readings must be labelled LIVE API DATA or EXTERNAL CLIMATE DATA.
+
+Do not use them to fabricate Forma microclimate results.
+
+## C. Geospatial calculations
+
+Implement actual client-side calculations for:
+
+- Polygon area.
+- Perimeter.
+- Site boundary validation.
+- Coordinate validation.
+- Distance calculations.
+- GeoJSON validation.
+
+Use suitable geographic calculations and clearly document their assumptions.
+
+For site-area calculations, use square kilometres as the primary display unit.
+
+## D. Solar and environmental contextual data
+
+Research and integrate appropriate publicly accessible environmental APIs where a reliable service exists.
+
+Potential integrations:
+
+- Open-Meteo radiation variables.
+- Public environmental datasets.
+- Relevant elevation data providers.
+
+Only implement endpoints with documented availability and permitted usage.
+
+Do not pretend that an external solar estimate equals Forma Solar Energy analysis.
+
+## E. API integration architecture
+
+Create independent API service modules.
+
+Every integration must support:
+
+- Environment-based configuration.
+- Loading state.
+- Error state.
+- Timeout.
+- Request cancellation.
+- Caching.
+- Data validation.
+- Source attribution.
+- Graceful fallback.
+
+Use:
+
+VITE_OPEN_METEO_BASE_URL
+VITE_OVERPASS_BASE_URL
+VITE_FORMSPREE_ENDPOINT
+VITE_PUBLIC_APP_URL
+
+Only expose genuinely public configuration in VITE_ variables.
+
+Never put private API keys, secrets, or administrator passwords in frontend environment variables.
+
+If a provider requires a secret, implement a server-side Vercel Function or equivalent serverless endpoint.
+
+Never call an authenticated secret-bearing API directly from the browser.
+
+Create .env.example with documentation.
+
+---
+
+# 10. PAGE-BY-PAGE IMPLEMENTATION
+
+## PAGE 1 — HOME
+
+Build a premium landing page.
+
+Hero section:
+
+Project title:
+Smart City Site Planning
+
+Subtitle:
+Designing Sustainable, Resilient and Intelligent Urban Environments.
+
+Display:
+
+- SIH26114 badge.
+- Competition information.
+- Organization.
+- Category.
+- Theme.
+
+Animated counters:
+
+- Site area.
+- Number of proposals.
+- Analyses completed.
+- Number of buildings.
+
+Important:
+Counters must read real project data. Missing data must display "--".
+
+Buttons:
+
+- Explore Project
+- View Proposals
+- Explore Analysis
+- Download Project Summary
+
+Additional sections:
+
+1. Project introduction.
+2. Problem statement.
+3. Project objectives.
+4. Why smart cities?
+5. Four mandatory elements.
+6. Project development workflow.
+7. Proposal preview.
+8. Analysis preview.
+9. Revit integration preview.
+10. Footer.
+
+Workflow:
+
+Site Selection → Context Research → Design → Analysis → Comparison → Revit Export.
+
+---
+
+## PAGE 2 — SITE OVERVIEW
+
+Create an interactive full-width map.
+
+Features:
+
+- OpenStreetMap tiles.
+- GeoJSON boundary.
+- Polygon visualization.
+- Site coordinates.
+- Calculated area.
+- Perimeter.
+- Zoom controls.
+- Layer controls.
+- Map legend.
+- External context overlays.
+
+Calculate the actual area from polygon coordinates.
+
+Validation:
+
+Area >= 1 km² = requirement satisfied.
+
+Area < 1 km² = requirement not satisfied.
+
+Missing coordinates = pending validation.
+
+Do not allow manually typed area to override calculated polygon area without an explicit distinction.
+
+Create context cards:
+
+- Terrain.
+- Existing buildings.
+- Roads.
+- Climate.
+- Nearby infrastructure.
+- Green spaces.
+
+Mandatory elements:
+
+1. Site Limits.
+2. Landscaping.
+3. Buildings.
+4. Transportation.
+
+Each card should have:
+
+- Description.
+- Completion status.
+- Supporting screenshot.
+- Related proposal.
+- Evidence link.
+
+---
+
+## PAGE 3 — DESIGN PROPOSALS
+
+Support Proposal A, Proposal B, Proposal C, and Proposal D when configured.
+
+Create responsive tabs.
+
+Each proposal must show:
+
+- Name.
+- Description.
+- Design philosophy.
+- Planning strategy.
+- Site utilization.
+- Buildings.
+- Green space.
+- Transportation.
+- Land-use distribution.
+- Forma screenshots.
+- Team notes.
+
+Use Recharts donut charts for land-use distribution.
+
+Validate percentages.
+
+Their total should equal 100% when the complete land-use distribution is provided.
+
+Create a screenshot carousel.
+
+Create a before-and-after comparison slider for two authentic uploaded images.
+
+Do not use generated visuals when a screenshot is missing.
+
+Display an elegant empty placeholder instead.
+
+---
+
+## PAGE 4 — ANALYSIS DASHBOARD
+
+Create eight independent analysis sections.
+
+1. Area Metrics.
+2. Embodied Carbon.
+3. Sun Hours.
+4. Daylight Potential.
+5. Wind Analysis.
+6. Microclimate Analysis.
+7. Noise Analysis.
+8. Solar Energy.
+
+Every analysis card must contain:
+
+- What it measures.
+- Team's Forma screenshot.
+- Proposal A results.
+- Proposal B results.
+- Chart.
+- Key insight.
+- Unit.
+- Data source.
+- Verification status.
+
+Use appropriate charts:
+
+- Area Metrics: bar chart.
+- Embodied Carbon: bar chart.
+- Sun Hours: comparison chart.
+- Daylight Potential: bar chart.
+- Wind: radar or bar chart.
+- Microclimate: line chart where time-series data exists.
+- Noise: comparison chart.
+- Solar Energy: bar or line chart.
+
+Provide:
+
+- Analysis filters.
+- Proposal filters.
+- Unit display.
+- Empty states.
+- Data source indicators.
+- Screenshot viewing.
+
+Charts must render only from actual editable data.
+
+Never populate chart values with invented numbers.
+
+If no metric is provided, display an informative empty state.
+
+---
+
+## PAGE 5 — FORMA BOARD COMPARISON
+
+Build a professional comparison dashboard.
+
+Compare all available proposals.
+
+Create a sortable table.
+
+Possible metrics:
+
+- Site area.
+- Green-space percentage.
+- Building count.
+- Embodied carbon.
+- Daylight potential.
+- Solar energy.
+- Noise level.
+- Other configured metrics.
+
+Direction rules:
+
+Lower is better:
+- Embodied carbon.
+- Noise.
+
+Higher is better:
+- Daylight potential.
+- Solar energy.
+- Green-space percentage.
+
+Other metrics must have an explicitly configured comparison direction.
+
+Do not automatically classify every metric.
+
+Create:
+
+1. Side-by-side comparison.
+2. Radar chart.
+3. Normalized scoring.
+4. Adjustable weight sliders.
+5. Live weighted score.
+6. Recommended proposal.
+7. Final decision section.
+8. Team justification.
+
+Missing metrics must not be treated as zero.
+
+If a proposal lacks data, show insufficient data.
+
+Display the methodology used for normalization.
+
+Add this note:
+
+"The weighted score is a team decision-support tool and does not replace engineering judgment or the official Autodesk Forma Board evaluation."
+
+Final decision and justification must remain editable by the team.
+
+---
+
+## PAGE 6 — SMART CITY FEATURES
+
+Create filterable smart-city feature cards.
+
+Categories:
+
+Transportation:
+- Electric vehicles.
+- Cycling infrastructure.
+- Pedestrian-first planning.
+- Public transportation.
+- Road connectivity.
+
+Green infrastructure:
+- Parks.
+- Urban forests.
+- Green corridors.
+- Open spaces.
+- Landscaping.
+
+Energy:
+- Solar potential.
+- Renewable energy.
+- Energy-conscious building orientation.
+
+Water:
+- Rainwater harvesting.
+- Drainage planning.
+- Water conservation.
+- Sustainable water infrastructure.
+
+Environmental comfort:
+- Wind.
+- Microclimate.
+- Noise management.
+- Daylight.
+
+Resilience:
+- Climate adaptation.
+- Sustainable infrastructure.
+- Emergency access.
+- Urban resilience.
+
+Every card must support:
+
+- Description.
+- Status.
+- Related proposal.
+- Related analysis.
+- Evidence image.
+- Learn more navigation.
+
+Distinguish planned features from implemented and verified features.
+
+---
+
+## PAGE 7 — REVIT AND BIM
+
+Build a professional Forma-to-Revit workflow page.
+
+Show these steps:
+
+1. Complete Forma site planning.
+2. Select final design proposal.
+3. Export Site BIM.
+4. Open and synchronize in Revit.
+5. Develop detailed building models.
+6. Prepare building drawing block.
+7. Validate final deliverables.
+
+Display statuses:
+
+- Forma model: Pending / Completed.
+- Site BIM export: Pending / Completed.
+- Revit sync: Pending / Completed.
+- Building drawing block: Pending / Completed.
+
+Include:
+
+- Site BIM download link.
+- Revit screenshots.
+- Drawing block preview.
+- Model evidence.
+- Team notes.
+
+Never claim successful synchronization without team confirmation.
+
+---
+
+## PAGE 8 — GALLERY AND WALKTHROUGH
+
+Create a responsive masonry gallery.
+
+Categories:
+
+- Forma Screenshots.
+- Proposal A.
+- Proposal B.
+- Analysis.
+- Revit.
+- Forma Board.
+- Final Renders.
+
+Features:
+
+- Category filters.
+- Lazy-loaded images.
+- Lightbox.
+- Keyboard navigation.
+- Previous and next.
+- Escape to close.
+- Image captions.
+- Source labels.
+
+Create a 30-second walkthrough video section.
+
+Support:
+
+- Local MP4.
+- YouTube embed.
+- Video chapters.
+- Timestamps.
+- Notes.
+
+If no video is configured, show an upload placeholder.
+
+---
+
+## PAGE 9 — SUBMISSION TRACKER
+
+Create an interactive competition checklist.
+
+Items:
+
+- Forma file created.
+- Two proposals completed.
+- Mandatory site elements completed.
+- Eight analyses completed or documented.
+- Forma Board comparison completed.
+- Site BIM exported.
+- Revit building drawing block prepared.
+- Five-to-seven-slide PPT prepared.
+- Original work verified.
+- Faculty SPOC form completed.
+- Rendered images prepared.
+- Thirty-second walkthrough prepared.
+- Final submission reviewed.
+
+Features:
+
+- Checkbox controls.
+- Progress percentage.
+- Completion count.
+- LocalStorage persistence.
+- Reset button.
+- Incomplete task highlighting.
+
+Deadline:
+
+Idea submission deadline: 5 October 2026.
+
+The website must calculate the deadline state dynamically.
+
+If the deadline has passed, display:
+
+CLOSED
+
+Use the actual current date rather than hardcoding the status.
+
+Add a presentation slide-count validator:
+
+- 5 slides: valid.
+- 6 slides: valid.
+- 7 slides: valid.
+- Below 5: warning.
+- Above 7: warning.
+
+Allow the team to enter the current slide count.
+
+---
+
+## PAGE 10 — TEAM AND RESOURCES
+
+Create responsive team cards.
+
+Fields:
+
+- Name.
+- Role.
+- Department.
+- Photo placeholder.
+- Email.
+- Portfolio.
+- LinkedIn.
+- GitHub.
+
+Mentor and Faculty SPOC sections.
+
+Resource links:
+
+- Autodesk Forma.
+- Autodesk Revit documentation.
+- Autodesk Drive folder.
+- Smart India Hackathon website.
+- Competition guidelines.
+- Relevant research papers.
+
+Use editable URLs from project.json.
+
+Do not invent team details or resource links.
+
+---
+
+## PAGE 11 — ABOUT
+
+Explain:
+
+- Project motivation.
+- Problem statement.
+- Project objectives.
+- Planning methodology.
+- Software used.
+- Team's approach.
+- Sustainability goals.
+- Project limitations.
+
+Display the mandatory badge:
+
+"Original work made in Autodesk Forma - no AI-generated content."
+
+---
+
+## PAGE 12 — CONTACT AND FEEDBACK
+
+Create a functional validated form.
+
+Fields:
+
+- Name.
+- Email.
+- Subject.
+- Message.
+
+Requirements:
+
+- Required-field validation.
+- Email validation.
+- Submission loading state.
+- Success state.
+- Error state.
+
+Support Formspree using:
+
+VITE_FORMSPREE_ENDPOINT
+
+If no endpoint exists, provide a mailto fallback.
+
+Do not pretend a message was submitted successfully if it was not.
+
+Protect against spam and excessive requests.
+
+---
+
+# 11. ADMIN AND PROJECT EDITING MODE
+
+Implement a dedicated project management interface.
+
+The team should be able to update common project information without editing source code.
+
+Include editable sections:
+
+- Project information.
+- Site information.
+- Site coordinates.
+- Proposals.
+- Analysis values.
+- Screenshots.
+- Gallery.
+- Team.
+- Timeline.
+- Video.
+- Revit files.
+- Final decision.
+- Submission checklist.
+
+Support:
+
+- Add/edit/delete proposal.
+- Add/edit/delete metric.
+- Add gallery item.
+- Update evidence links.
+- Update completion status.
+- Import JSON.
+- Export JSON.
+- Validate JSON before importing.
+
+Important architecture decision:
+
+A static website cannot safely write directly into its deployed source JSON file from a browser.
+
+Therefore implement a practical editing architecture:
+
+- Local editing mode with localStorage persistence.
+- JSON export/import.
+- Optional backend persistence adapter.
+- Clearly explain that local edits are browser-specific until exported or saved through a configured backend.
+
+If implementing remote editing, use an optional secure backend such as Supabase or a serverless API.
+
+Never expose database service-role keys.
+
+Do not create a fake admin authentication system.
+
+If authentication is enabled, use a genuine provider and secure server-side authorization.
+
+---
+
+# 12. GLOBAL SEARCH
+
+Implement a command palette.
+
+Keyboard shortcuts:
+
+- Ctrl + K.
+- Cmd + K.
+
+Search across:
+
+- Pages.
+- Proposals.
+- Analyses.
+- Smart city features.
+- Team members.
+- Resources.
+
+Features:
+
+- Instant filtering.
+- Keyboard navigation.
+- Enter to open.
+- Escape to close.
+- Accessible focus management.
+
+---
+
+# 13. GLOBAL THEME AND NAVIGATION
+
+Create:
+
+- Sticky navigation.
+- Responsive mobile drawer.
+- Active route highlighting.
+- Theme toggle.
+- System theme detection.
+- Smooth transitions.
+- Breadcrumbs.
+- Footer navigation.
+
+Persist theme preference in localStorage.
+
+Respect prefers-reduced-motion.
+
+Persist user-side preferences safely using try/catch.
+
+---
+
+# 14. PDF EXPORT
+
+Create a Download Project Summary as PDF feature.
+
+The PDF should contain:
+
+1. Project title.
+2. SIH problem statement information.
+3. Project objective.
+4. Site overview.
+5. Proposal comparison.
+6. Analysis summary.
+7. Sustainability features.
+8. Revit workflow status.
+9. Team details.
+10. Final decision.
+
+Include actual configured values only.
+
+Missing values should appear as "--".
+
+Use a clean professional layout.
+
+Handle page breaks, tables, and long content.
+
+Do not include fabricated renderings.
+
+---
+
+# 15. PERFORMANCE AND ACCESSIBILITY
+
+Requirements:
+
+- React.lazy route splitting.
+- Suspense loading states.
+- Lazy-loaded images.
+- Image dimensions.
+- Optimized assets.
+- Minimal unnecessary re-rendering.
+- API caching.
+- Error boundaries.
+- 404 page.
+- Semantic HTML.
+- Keyboard accessibility.
+- ARIA labels.
+- Visible focus rings.
+- AA color contrast.
+- Responsive charts.
+- Accessible forms.
+- Descriptive image alt text.
+- Reduced-motion support.
+
+SEO:
+
+- Unique page titles.
+- Meta descriptions.
+- Open Graph tags.
+- Favicon.
+- Canonical URL configuration.
+- robots.txt.
+- sitemap.xml.
+- Structured metadata where appropriate.
+
+---
+
+# 16. SECURITY AND RELIABILITY
+
+Implement:
+
+- Environment variable validation.
+- No private secrets in frontend bundles.
+- Safe external links.
+- Input validation.
+- URL validation.
+- File type validation.
+- Upload size limits where uploads are supported.
+- Error handling.
+- API timeout handling.
+- Rate-limit-aware requests.
+- No unsafe HTML rendering.
+- Secure server-side handling of private API credentials.
+
+Document all third-party API dependencies and their limitations.
+
+Never claim an integration is complete without testing it.
+
+---
+
+# 17. AUTOMATED TESTING
+
+Use Vitest and React Testing Library.
+
+Mandatory unit tests:
+
+1. Polygon area calculation.
+2. Minimum 1 km² validation.
+3. Weighted proposal scoring.
+4. Missing metric handling.
+5. Comparison direction rules.
+6. Checklist persistence.
+7. Slide-count validation.
+8. Project JSON schema validation.
+9. Proposal data rendering.
+10. API error handling.
+
+Also implement Playwright tests for:
+
+- Home page navigation.
+- Proposal switching.
+- Analysis filtering.
+- Compare calculations.
+- Theme switching.
+- Checklist interactions.
+- Search command palette.
+- PDF export availability.
+- Responsive mobile navigation.
+
+Do not simply create test files.
+
+Actually execute the tests and fix failures.
+
+---
+
+# 18. README AND DOCUMENTATION
+
+Create a detailed README.md containing:
+
+- Project introduction.
+- Technology stack.
+- Folder structure.
+- Installation.
+- Local development.
+- Production build.
+- Testing.
+- Environment variables.
+- API configuration.
+- project.json documentation.
+- Adding Forma screenshots.
+- Adding gallery images.
+- Adding videos.
+- Updating site coordinates.
+- Adding proposals.
+- Updating analysis values.
+- Admin editing workflow.
+- PDF export.
+- Deployment instructions.
+- Known limitations.
+- Troubleshooting.
+- No-AI-content policy.
+
+Installation commands:
+
+npm install
+npm run dev
+npm run build
+npm run test
+npm run test:e2e
+
+---
+
+# 19. DEPLOYMENT READINESS
+
+Prepare the project for Vercel and Netlify.
+
+Requirements:
+
+- Production build.
+- SPA route rewrites.
+- Environment variable documentation.
+- Correct asset paths.
+- HTTPS-compatible external resources.
+- No development-only dependencies in runtime.
+- No console errors.
+- No broken internal links.
+- No broken image references.
+- No TypeScript errors.
+
+If GitHub Pages is configured, handle its base path correctly.
+
+Do not claim that the website is published unless an actual deployment has been completed and verified.
+
+If deployment credentials are unavailable, deliver a deployment-ready project and exact deployment instructions.
+
+---
+
+# 20. FINAL ACCEPTANCE CRITERIA
+
+The project is not complete until all applicable requirements below are satisfied.
+
+[ ] Application starts successfully.
+
+[ ] All pages are implemented.
+
+[ ] All routes work.
+
+[ ] Responsive layout works.
+
+[ ] Project data loads from project.json.
+
+[ ] Runtime schema validation works.
+
+[ ] Map displays correctly.
+
+[ ] Polygon area is calculated correctly.
+
+[ ] Minimum area validation works.
+
+[ ] External API integrations are tested or clearly marked as awaiting configuration.
+
+[ ] Proposal switching works.
+
+[ ] Charts use authentic editable data.
+
+[ ] Comparison scores update live.
+
+[ ] Missing metrics are handled correctly.
+
+[ ] Gallery lightbox works.
+
+[ ] Video component works when configured.
+
+[ ] Checklist persistence works.
+
+[ ] Countdown works.
+
+[ ] Slide-count validator works.
+
+[ ] Search works.
+
+[ ] Theme switching works.
+
+[ ] Admin editing and JSON export/import work.
+
+[ ] PDF export works.
+
+[ ] Contact form works or provides a truthful fallback.
+
+[ ] Accessibility requirements are addressed.
+
+[ ] Unit tests pass.
+
+[ ] End-to-end tests pass where supported.
+
+[ ] npm run build passes with zero errors.
+
+[ ] No broken links.
+
+[ ] No fake project statistics.
+
+[ ] No AI-generated project imagery.
+
+[ ] README is complete.
+
+[ ] Deployment configuration is ready.
+
+---
+
+# 21. FINAL EXECUTION INSTRUCTIONS
+
+Now begin implementation.
+
+First show the development plan and file structure.
+
+Then immediately start building the actual website.
+
+Do not merely explain how to build it.
+
+Create the files in the workspace.
+
+Install dependencies.
+
+Implement every page and feature.
+
+Run the development server.
+
+Run tests.
+
+Run the production build.
+
+Fix every error you encounter.
+
+Verify the website using browser interaction or available browser automation tools.
+
+Do not mark an incomplete feature as completed.
+
+If an external API cannot be tested because of unavailable credentials or network restrictions, explicitly report that limitation and leave the integration configured for future activation.
+
+At the end, provide:
+
+1. Completed features.
+2. Implemented pages.
+3. API integrations and their tested status.
+4. Test results.
+5. Production build status.
+6. Development server URL.
+7. Deployment instructions.
+8. Environment variables required.
+9. Exact team information that still needs to be supplied.
+10. Any remaining limitations.
+
+FINAL GOAL:
+
+Deliver a polished, professional, fully interactive Smart City project showcase website that can be deployed on Vercel or another hosting provider.
+
+The website must be technically functional, visually impressive, data-driven, editable, competition-ready, and honest about every project result.
+
+Build the actual product. Do not stop at a prototype or a landing page.
