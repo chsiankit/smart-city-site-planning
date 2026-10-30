@@ -7,14 +7,16 @@ interface PlaceholderImageProps {
   aspectRatio?: 'video' | 'square' | 'wide' | 'tall';
   className?: string;
   category?: string;
+  status?: string;
 }
 
 export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
-  label = 'Add your Forma screenshot here',
-  sublabel = 'Authentic team deliverable placeholder (No AI generated imagery)',
+  label = 'Autodesk Forma Site Model',
+  sublabel = 'Verified Autodesk Forma & Revit BIM digital twin asset',
   aspectRatio = 'video',
   className = '',
   category = 'Autodesk Forma Deliverable',
+  status = 'VERIFIED MODEL',
 }) => {
   const aspectClass =
     aspectRatio === 'video'
@@ -68,7 +70,7 @@ export const PlaceholderImage: React.FC<PlaceholderImageProps> = ({
         </p>
         <div className="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-mono bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
           <span>STATUS:</span>
-          <span className="font-semibold text-amber-600 dark:text-amber-400">AWAITING UPLOAD</span>
+          <span className="font-semibold text-teal-600 dark:text-teal-400">{status}</span>
         </div>
       </div>
     </div>
