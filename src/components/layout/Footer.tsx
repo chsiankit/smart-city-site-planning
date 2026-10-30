@@ -62,6 +62,8 @@ export const Footer: React.FC = () => {
               Project Deliverables
             </h4>
             <ul className="space-y-2 text-xs">
+              <li><Link to="/workflow" className="hover:text-teal-300 transition-colors text-amber-300 font-semibold">AI Planning Workflow (Gemma 4)</Link></li>
+              <li><Link to="/open-source" className="hover:text-teal-300 transition-colors text-emerald-300 font-semibold">Open Source & AI (Hacktoberfest)</Link></li>
               <li><Link to="/tracker" className="hover:text-teal-300 transition-colors">Project Progress & Checklist</Link></li>
               <li><Link to="/gallery" className="hover:text-teal-300 transition-colors">30-Second Walkthrough Video</Link></li>
               <li><Link to="/team" className="hover:text-teal-300 transition-colors">Team & Academic Resources</Link></li>

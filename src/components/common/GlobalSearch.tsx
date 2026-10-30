@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProjectData } from '../../hooks/useProjectData';
-import { Search, Compass, BarChart2, Layers, Cpu, FileCheck, Users, HelpCircle, X, ArrowRight } from 'lucide-react';
+import { Search, Compass, BarChart2, Layers, Cpu, FileCheck, Users, HelpCircle, X, ArrowRight, Sparkles, Code } from 'lucide-react';
 
 interface GlobalSearchProps {
   isOpen: boolean;
@@ -43,6 +43,8 @@ export const GlobalSearch: React.FC<GlobalSearchProps> = ({ isOpen, onClose }) =
     { id: 'page-smart-city', category: 'Page', title: 'Smart City Infrastructure', description: 'Mobility, sponge city drainage, solar microgrid, and resilience networks.', url: '/smart-city', icon: <Cpu className="w-4 h-4" /> },
     { id: 'page-revit', category: 'Page', title: 'Autodesk Revit & BIM Workflow', description: '7-step Forma to Revit BIM pipeline, drawing blocks, and sync status.', url: '/revit-bim', icon: <Layers className="w-4 h-4" /> },
     { id: 'page-gallery', category: 'Page', title: 'Gallery & 30s Walkthrough Video', description: 'Masonry gallery with lightbox and 30-second project walkthrough chapters.', url: '/gallery', icon: <FileCheck className="w-4 h-4" /> },
+    { id: 'page-workflow', category: 'Page', title: 'AI Planning Workflow (Gemma 4)', description: '6-step practical site planning workflow powered by Gemma 4.', url: '/workflow', icon: <Sparkles className="w-4 h-4 text-teal-400" /> },
+    { id: 'page-opensource', category: 'Page', title: 'Open Source & AI (Hacktoberfest 2026)', description: 'Open-source repository docs, Gemma 4 architecture, contribution guide, and MIT license.', url: '/open-source', icon: <Code className="w-4 h-4 text-emerald-400" /> },
     { id: 'page-tracker', category: 'Page', title: 'Project Progress & Checklist', description: 'Development milestones, deliverable checklist, and slide deck validator.', url: '/tracker', icon: <FileCheck className="w-4 h-4" /> },
     { id: 'page-team', category: 'Page', title: 'Team & Resources', description: 'Team roles, academic advisors, and official reference documentation.', url: '/team', icon: <Users className="w-4 h-4" /> },
     { id: 'page-about', category: 'Page', title: 'About & Methodology', description: 'Design philosophy, tools used, and Non-AI authenticity declaration.', url: '/about', icon: <HelpCircle className="w-4 h-4" /> },

@@ -15,6 +15,7 @@ import {
 } from 'recharts';
 import { Badge } from '../components/common/Badge';
 import { PlaceholderImage } from '../components/common/PlaceholderImage';
+import { GemmaAnalysisPanel } from '../components/ai/GemmaAnalysisPanel';
 import {
   BarChart2,
   Sun,
@@ -139,6 +140,14 @@ export const Analysis: React.FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Embedded Gemma 4 Environmental Advisory Panel */}
+      <GemmaAnalysisPanel
+        activeModuleTitle={filteredAnalyses[0]?.title || 'Forma Environmental Simulation'}
+        activeModuleDescription={filteredAnalyses[0]?.description || 'Forma site analysis'}
+        moduleMetrics={filteredAnalyses[0]?.chartData?.[0]}
+        siteAreaKm2={data.site.areaKm2}
+      />
 
       {/* Analysis Modules Grid */}
       <div className="space-y-10">

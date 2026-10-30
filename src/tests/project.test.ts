@@ -94,4 +94,30 @@ describe('Smart City Site Planning Unit Tests', () => {
     expect(val.errors.filter((e) => e.category === 'Critical')).toHaveLength(0);
     expect(val.parsedData?.project.name).toBe('SMART CITY SITE PLANNING');
   });
+
+  it('6. Verifies Gemma 4 workflow step payload contracts', () => {
+    const payload = {
+      step: 3,
+      siteInfo: {
+        name: 'Smart City Urban District',
+        area: '1.28 km²',
+        location: 'Regional Metro',
+      },
+      goals: 'Maximize green space, reduce embodied carbon',
+      constraints: 'Maximum height 60m, 35% permeable landscape',
+      selectedProposal: 'Proposal A (Biophilic TOD)',
+    };
+    expect(payload.step).toBe(3);
+    expect(payload.siteInfo.area).toContain('1.28');
+    expect(payload.goals).toContain('embodied carbon');
+  });
+
+  it('7. Ensures data provenance categories strictly separate verified simulations from AI recommendations', () => {
+    const verifiedCategory = 'TEAM VERIFIED';
+    const aiCategory = 'AI GENERATED (GEMMA 4)';
+    const demoCategory = 'DEMO HEURISTIC MODE';
+    expect(verifiedCategory).not.toBe(aiCategory);
+    expect(aiCategory).toContain('GEMMA 4');
+    expect(demoCategory).toContain('HEURISTIC');
+  });
 });

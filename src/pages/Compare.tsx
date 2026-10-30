@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useProjectData } from '../hooks/useProjectData';
 import { calculateNormalizedScores } from '../utils/scoring';
 import { Badge } from '../components/common/Badge';
+import { GemmaComparisonAdvisor } from '../components/ai/GemmaComparisonAdvisor';
 import {
   RadarChart,
   PolarGrid,
@@ -356,6 +357,13 @@ export const Compare: React.FC = () => {
           </table>
         </div>
       </div>
+
+      {/* Embedded Gemma 4 Multi-Criteria Trade-off Advisor */}
+      <GemmaComparisonAdvisor
+        proposals={proposals.map((p) => ({ name: p.name, metrics: p.metrics }))}
+        weights={customWeights}
+        siteAreaKm2={data.site.areaKm2}
+      />
 
       {/* Final Team Decision & Official Justification */}
       <div className="p-8 rounded-3xl bg-gradient-to-br from-[#102A43] to-[#0A3A40] text-white shadow-xl space-y-4">

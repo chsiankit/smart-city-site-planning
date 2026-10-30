@@ -1,187 +1,173 @@
-# SMART CITY SITE PLANNING
-## Sustainable Urban Development Through Intelligent Site Design
+# Smart City Site Planning
+### Sustainable Urban Development Through Intelligent Site Design & Gemma 4 AI
 
-> **"An integrated urban planning initiative exploring sustainable land utilization, environmental performance, intelligent transportation, green infrastructure, and resilient urban development using Autodesk Forma and Revit."**
+[![MIT License](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
+[![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2026-orange.svg)](https://hacktoberfest.com)
+[![Model](https://img.shields.io/badge/AI%20Model-Gemma%204%20(31B--IT)-009688.svg)](https://ai.google.dev/gemma)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-19.0-61dafb.svg)](https://react.dev/)
+
+> **Submitted for Hacktoberfest Hack Day Kanpur × AI Club 2026**  
+> **Target Award Categories:**  
+> 1. 🏆 **Best Open-Source AI Project**  
+> 2. ⚡ **Best Use of Gemma 4**
 
 ---
 
-## 1. Project Overview & Objective
+## 1. Project Overview
 
-This platform is a production-ready, interactive showcase for **Smart City Site Planning Using Autodesk Forma Site Design** followed by detailed building development using **Autodesk Revit 2025**.
+**Smart City Site Planning** is an open-source, AI-assisted urban development and computational site-design platform. It integrates generative architectural workflows across **Autodesk Forma** (conceptual massing, microclimate, daylight, wind, and carbon simulations), **Autodesk Revit 2025** (BIM drawing blocks and structural coordination), and **Google DeepMind's open-weights Gemma 4** (`gemma-4-31b-it`).
 
-The project establishes a comprehensive smart-city redevelopment proposal covering a verified area of **1.28 km²** (surpassing the minimum planning threshold of ≥ 1.0 km²). It demonstrates how intelligent computational urban planning addresses rapid urbanization, environmental microclimate sustainability, pedestrian comfort, embodied carbon reduction, and BIM interoperability.
+Covering a verified **1.28 km² urban district**, the platform models two distinct master plan alternatives:
+- **Proposal A:** Biophilic Transit-Oriented Core (TOD) with 34.2% green cover and 10.9% lower embodied carbon.
+- **Proposal B:** Polycentric Microclimate Superblocks with staggered wind buffering and decentralized neighborhood amenities.
 
-### Non-Negotiable Authenticity Policy
+### Non-Negotiable Authenticity & Zero-Hallucination Policy
 > **"Original work made in Autodesk Forma — no AI-generated content."**
-- Every metric, massing shape, and chart is based on authentic modeling in Autodesk Forma and Autodesk Revit.
-- No AI image generators, synthetic renders, or fabricated simulations are used.
-- Clear data provenance badges are displayed across the interface:
-  - `TEAM VERIFIED`
-  - `LIVE API DATA`
-  - `CALCULATED FROM PROVIDED DATA`
-  - `PLACEHOLDER`
-  - `NOT AVAILABLE`
+- All spatial polygons, building heights, and environmental analytical data originate from verified engineering runs in Autodesk Forma and Revit.
+- Gemma 4 recommendations are strictly separated from verified simulation findings via transparent provenance tags (`TEAM VERIFIED`, `CALCULATED FROM PROVIDED DATA`, `AI GENERATED (GEMMA 4)`, `DEMO HEURISTIC MODE`).
+- No fabricated sensor readings or fake statistics.
 
 ---
 
-## 2. Implemented Pages & Features
+## 2. Gemma 4 Integration Architecture
 
-1. **Home (`/`)**:
-   - Hero section with `"SMART URBAN DEVELOPMENT PROJECT"` badge, professional project information strip, and animated real-time counters.
-   - Project introduction, scope, core pillars, and the 4 mandatory components preview.
-   - 6-step generative workflow pipeline (*Site Selection → Context Research → Design → Analysis → Forma Board → Revit Export*).
-   - Instant project summary PDF download button.
+The platform features a dedicated server-side AI planning engine powered by **Gemma 4** (`gemma-4-31b-it`), Google's instruction-tuned, open-weights multimodal language model.
 
-2. **Site Overview (`/site`)**:
-   - Full-width interactive Leaflet map with OpenStreetMap tiles.
-   - Georeferenced GeoJSON polygon boundary with automated spherical geodesic area calculation (**1.28 km²**).
-   - Real-time boundary validation: `Area >= 1.0 km² = Threshold Satisfied`.
-   - Live external weather integration via **Open-Meteo API** (ambient temperature, wind speed/direction, humidity, direct normal solar irradiance).
-   - Contextual GIS features via **Overpass OSM API** (nearby roads, buildings, parks, amenities).
-   - 4 Core Planning Component status cards: *Site Limits, Landscaping, Buildings, Transportation*.
-
-3. **Design Proposals (`/proposals`)**:
-   - Tab switching between **Proposal A: Biophilic Transit-Oriented Core (TOD)** and **Proposal B: Polycentric Microclimate Superblocks**.
-   - Recharts Donut Chart of land-use distribution with automatic 100% target validation.
-   - Interactive horizontal **Before-and-After drag slider** for cross-proposal comparisons.
-   - Authentic screenshot carousel with CAD blueprint fallback placeholders.
-
-4. **Autodesk Forma Analysis Dashboard (`/analysis`)**:
-   - Complete documentation for all **8 Autodesk Forma Analysis Modules**:
-     1. *Area Metrics & Density*
-     2. *Embodied Carbon Analysis (kg CO₂e/m²)*
-     3. *Sun Hours Analysis (Equinox & Solstice)*
-     4. *Daylight Potential (% Floor Area meeting sDA)*
-     5. *Wind Comfort & Aerodynamics (Lawson CFD Criteria)*
-     6. *Microclimate & UTCI Thermal Comfort Variance*
-     7. *Noise Analysis & Acoustic Buffering (dBA)*
-     8. *Solar Energy & Photovoltaic Yield (kWh/m²/yr)*
-   - Responsive Recharts visualizations (Bar & Line charts) with proposal filtering.
-   - Authentic engineering insights and deliverable evidence cards.
-
-5. **Forma Board Comparison (`/compare`)**:
-   - Side-by-side comparative matrix across all criteria.
-   - Direction rules explicitly enforced (*Lower is better* for Embodied Carbon & Noise; *Higher is better* for Green Space, Daylight, Solar Yield).
-   - **Interactive multi-criteria weight sliders (0–10)** updating normalized composite scores in real-time.
-   - Multi-axis Radar chart comparing normalized indicator equilibrium (0–100 scale).
-   - Official Forma Board decision and engineering justification.
-
-6. **Smart City Features (`/smart-city`)**:
-   - Filterable feature cards across 6 categories: *Transportation, Green Infrastructure, Energy, Water, Environmental Comfort, Resilience*.
-   - Clear distinction between *Verified*, *Implemented*, and *Planned* systems.
-
-7. **Revit & BIM Workflow (`/revit-bim`)**:
-   - 7-step technical pipeline from conceptual Forma massing to Revit 2025 drawing blocks.
-   - Deliverable status pills for Forma site model, Site BIM export, Revit sync, and building drawing sheets.
-   - Download links and evidence notes.
-
-8. **Gallery & 30-Second Walkthrough Video (`/gallery`)**:
-   - Responsive masonry grid with category filters (*Forma Screenshots, Proposals, Analysis, Revit, Board, Renders*).
-   - Fullscreen Lightbox modal with keyboard controls (`←`, `→`, `Esc`).
-   - 30-second walkthrough video section with official timeline chapters.
-
-9. **Project Progress (`/tracker`)**:
-   - 13-item project deliverables checklist with `localStorage` persistence.
-   - Active milestone tracker driven by editable project schema data.
-   - Interactive presentation slide deck validator (*strictly checks 5–7 slide structure*).
-
-10. **Team & Resources (`/team`)**:
-    - Profiles for the student project team members.
-    - Academic Advisor and Autodesk Technical Advisor guidance cards.
-    - Reference documentation links (Autodesk Forma, Revit guides, ULI Sustainable Cities Standards).
-
-11. **About (`/about`)**:
-    - Deep dive into project motivation, methodology, SDG alignments (SDGs 11, 13, 7), and scope limitations.
-    - Prominent methodology and integrity declaration banner.
-
-12. **Contact (`/contact`)**:
-    - Validated inquiry form with **Formspree** API integration and truthful `mailto:` fallback.
-
-13. **Project Editor & Admin (`/admin`)**:
-    - Live in-browser editing of site coordinates, video URLs, decision justifications, and metrics.
-    - Real-time Zod schema validation diagnostic report.
-    - One-click JSON export and import.
-
-14. **Global Command Palette (Cmd + K / Ctrl + K)**:
-    - Search pages, proposals, analysis modules, features, and team members instantly.
-
-15. **PDF Summary Generator**:
-    - Download formatted project summary PDF via client-side `jsPDF`.
-
----
-
-## 3. Technology Stack
-
-- **Framework**: React 19, TypeScript (Strict Mode)
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS, Architectural blueprint patterns, Dark/Light modes
-- **Maps & Geospatial**: Leaflet, OpenStreetMap, Spherical geodesic area calculator
-- **Charts & Data**: Recharts, Responsive SVG
-- **Validation**: Zod runtime schema validation
-- **PDF Generation**: jsPDF
-- **Testing**: Vitest, React Testing Library
-- **APIs**: Open-Meteo Weather API, OpenStreetMap Overpass API, Formspree
-
----
-
-## 4. Getting Started
-
-### Installation
-```bash
-npm install
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   Client Browser (React 19)                 │
+│  - Floating AI Planning Assistant (GemmaPlanningAssistant)   │
+│  - 6-Step AI Planning Workflow (/workflow)                  │
+│  - Embedded Environmental Advisory Panel (/analysis)        │
+│  - Multi-Criteria Trade-Off Advisor (/compare)              │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ JSON RPC / REST (No API Key)
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                 Full-Stack Server (Express / Node)          │
+│  - Isolated GEMINI_API_KEY environment variable             │
+│  - Timeout protection (12s Promise.race guard)              │
+│  - Grounding prompts with active 1.28 km² site data         │
+│  - Graceful Heuristic Demo Mode Fallback                    │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ @google/genai SDK
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                 Google DeepMind Gemma 4                     │
+│  - Model: gemma-4-31b-it (256K context window)              │
+│  - Primary: Gemma 4 instruction-tuned model                 │
+│  - Secondary Fallback: gemini-3.8-flash                     │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Development Server
+### Key Gemma 4 Capabilities
+1. **Site Analysis Advisory:** Translates complex Lawson CFD wind laws, daylight autonomy (sDA), and embodied carbon metrics into actionable massing advice.
+2. **Biophilic & Green Infrastructure:** Recommends native canopy buffers, permeable ground corridors, and sustainable urban drainage systems (SuDS).
+3. **Multi-Criteria Proposal Comparison:** Synthesizes trade-offs between Proposal A and Proposal B in real-time as users adjust criteria weight sliders.
+4. **Zoning & Constraint Audits:** Validates floor area ratio (FAR), solar setback angles, and pedestrian accessibility.
+5. **Master Planning Reports:** Generates structured markdown deliverables suitable for municipal review.
+
+---
+
+## 3. 6-Step Practical AI Planning Workflow
+
+Navigate to `/workflow` to run the end-to-end planning engine:
+- **Step 1: Site Profile Selection:** Select or input site area, geographic coordinates, and terrain conditions.
+- **Step 2: Goals & Constraints:** Define targets for green cover %, embodied carbon reduction, FAR, and UN SDGs (SDG 11 & 13).
+- **Step 3: Gemma 4 Generative Synthesis:** Trigger server-side inference to generate a multi-section planning strategy.
+- **Step 4: Review & Live Editing:** Edit the generated markdown directly in the browser to reflect local municipal bylaws.
+- **Step 5: Compare Planning Alternatives:** Evaluate whether Proposal A or Proposal B best satisfies your revised targets.
+- **Step 6: Export Master Report:** Instant one-click copy or `.md` file download.
+
+---
+
+## 4. Implemented Pages & Features
+
+| Route | Page | Purpose & Technical Highlight |
+|---|---|---|
+| `/` | **Home** | Hero with live animated counters, core pillars, and quick workflow launchers. |
+| `/site` | **Site Overview** | Leaflet map with georeferenced 1.28 km² boundary, geodesic polygon area validation, and live Open-Meteo weather API integration. |
+| `/proposals` | **Design Proposals** | Interactive before/after split slider and Recharts land-use donut charts. |
+| `/analysis` | **Forma Analysis** | Complete documentation for all 8 Forma modules + **Embedded Gemma 4 Advisory Panel**. |
+| `/compare` | **Forma Board** | Multi-criteria radar chart with live weight sliders (0–10) + **Gemma 4 Trade-off Advisor**. |
+| `/workflow` | **AI Planning Workflow** | 6-step guided practical workflow generating structured master planning reports. |
+| `/open-source` | **Open Source & AI** | Dedicated Hacktoberfest 2026 page explaining open architecture and Gemma 4 usage. |
+| `/smart-city` | **Smart City Features** | Filterable cards across transportation, energy, water, and resilience networks. |
+| `/revit-bim` | **Revit & BIM** | 7-step interoperability pipeline from Forma massing to Revit 2025 drawing blocks. |
+| `/gallery` | **Project Gallery** | Lightbox gallery with keyboard navigation (`←`, `→`, `Esc`) and 30s video walkthrough. |
+| `/tracker` | **Project Progress** | 13-item deliverables checklist with `localStorage` persistence and 5–7 slide validator. |
+| `/team` | **Team & Resources** | Project team roles, academic guidance, and official Autodesk & ULI documentation. |
+| `/about` | **About & Methodology** | SDG alignments (SDGs 11, 13, 7) and non-negotiable authenticity declarations. |
+| `/admin` | **Project Editor** | In-browser JSON editor with real-time Zod schema validation and import/export. |
+| `/contact` | **Contact** | Validated inquiry form with Formspree integration and truthful `mailto:` fallback. |
+
+---
+
+## 5. Technology Stack
+
+- **Frontend:** React 19, TypeScript (Strict Mode), Vite, Tailwind CSS
+- **AI Engine:** Google DeepMind Gemma 4 (`gemma-4-31b-it`), `@google/genai` SDK
+- **Backend:** Express full-stack proxy with Vite dev middleware
+- **Geospatial & Maps:** Leaflet, OpenStreetMap, Spherical geodesic area calculator
+- **Visualizations:** Recharts (Bar, Line, Radar, Donut charts)
+- **Validation & Persistence:** Zod runtime validation, browser `localStorage`
+- **PDF Export:** client-side `jsPDF`
+- **Testing:** Vitest
+
+---
+
+## 6. Getting Started Locally
+
+### Prerequisites
+- Node.js >= 20.x
+- npm >= 10.x
+
+### Setup Instructions
 ```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/smart-city-site-planning.git
+cd smart-city-site-planning
+
+# 2. Install dependencies
+npm install
+
+# 3. Configure environment variables
+cp .env.example .env
+
+# Optional: Add GEMINI_API_KEY in .env for live Gemma 4 inference.
+# If unset, the app gracefully operates in Heuristic Demo Mode.
+
+# 4. Start full-stack development server
 npm run dev
 ```
-The application will launch on `http://localhost:3000`.
 
-### Run Unit Tests
+Visit `http://localhost:3000` in your browser.
+
+### Quality Verification
 ```bash
+# Run unit tests
 npm test
-```
 
-### Production Build
-```bash
+# Run TypeScript typechecks
+npm run lint
+
+# Build for production
 npm run build
 ```
 
 ---
 
-## 5. Configuration & Central Project Data
+## 7. Open-Source Contribution Guide
 
-All core project content is controlled centrally by:
-```
-/src/data/project.json
-```
-You can edit this file directly in code or use the built-in visual editor at `/admin`.
-
-### Environment Variables (`.env`)
-```env
-# Free Open-Meteo public API endpoint
-VITE_OPEN_METEO_BASE_URL="https://api.open-meteo.com/v1"
-
-# Free Overpass OSM public API endpoint
-VITE_OVERPASS_BASE_URL="https://overpass-api.de/api/interpreter"
-
-# Optional Formspree endpoint (falls back gracefully to mailto: if unset)
-VITE_FORMSPREE_ENDPOINT=""
-
-# Public deployment URL
-VITE_PUBLIC_APP_URL="http://localhost:3000"
-```
+We actively welcome contributions for Hacktoberfest 2026!
+- Read our [Contributing Guidelines](CONTRIBUTING.md) to learn how to add new analysis modules, improve AI prompts, or connect open GIS APIs.
+- Abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
+- Follow our [Security Policy](SECURITY.md) (never commit API keys).
+- Use our [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md) or [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md) issue templates.
 
 ---
 
-## 6. Verification Checklist
-- [x] Application compiles with zero TypeScript errors
-- [x] All 12 requested pages and Admin editor fully functional
-- [x] Geodesic polygon area validation calculates ≥ 1.0 km²
-- [x] 8 Autodesk Forma analysis modules documented with Recharts
-- [x] Forma Board comparison with live weight sliders and radar chart
-- [x] Generic project milestone tracker driven by project data
-- [x] Presentation slide deck validator operational
-- [x] PDF export generation operational
-- [x] Command Palette (Ctrl+K) active
-- [x] 100% authentic architecture (No AI-generated renders)
+## 8. License
+
+This project is licensed under the [MIT License](LICENSE).

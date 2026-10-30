@@ -19,6 +19,8 @@ import {
   Settings,
   ShieldCheck,
   Building,
+  Sparkles,
+  Code,
 } from 'lucide-react';
 import { GlobalSearch } from '../common/GlobalSearch';
 
@@ -48,6 +50,8 @@ export const Navbar: React.FC = () => {
     { to: '/proposals', label: 'Proposals', icon: <Layers className="w-4 h-4" /> },
     { to: '/analysis', label: 'Analysis', icon: <BarChart2 className="w-4 h-4" /> },
     { to: '/compare', label: 'Forma Board', icon: <BarChart2 className="w-4 h-4" /> },
+    { to: '/workflow', label: 'AI Workflow', icon: <Sparkles className="w-4 h-4 text-teal-400" /> },
+    { to: '/open-source', label: 'Open Source & AI', icon: <Code className="w-4 h-4 text-emerald-400" /> },
     { to: '/smart-city', label: 'Smart City Features', icon: <Cpu className="w-4 h-4" /> },
     { to: '/revit-bim', label: 'Revit & BIM', icon: <Building className="w-4 h-4" /> },
     { to: '/gallery', label: 'Gallery', icon: <FileCheck className="w-4 h-4" /> },

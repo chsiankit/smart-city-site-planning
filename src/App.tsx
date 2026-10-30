@@ -19,7 +19,10 @@ import { TeamResources } from './pages/TeamResources';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Admin } from './pages/Admin';
+import { AIWorkflow } from './pages/AIWorkflow';
+import { OpenSourceAI } from './pages/OpenSourceAI';
 import { NotFound } from './pages/NotFound';
+import { GemmaPlanningAssistant } from './components/ai/GemmaPlanningAssistant';
 
 export function App() {
   return (
@@ -45,6 +48,8 @@ export function App() {
                   <Route path="/smart-city" element={<SmartCity />} />
                   <Route path="/revit-bim" element={<RevitBIM />} />
                   <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/workflow" element={<AIWorkflow />} />
+                  <Route path="/open-source" element={<OpenSourceAI />} />
                   <Route path="/tracker" element={<Tracker />} />
                   <Route path="/team" element={<TeamResources />} />
                   <Route path="/about" element={<About />} />
@@ -55,6 +60,8 @@ export function App() {
               </Suspense>
             </main>
             <Footer />
+            {/* Global Gemma 4 Planning Assistant Launcher */}
+            <GemmaPlanningAssistant />
           </div>
         </BrowserRouter>
       </ProjectProvider>

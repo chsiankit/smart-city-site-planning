@@ -15,6 +15,8 @@ import {
   Cpu,
   Building,
   Check,
+  Sparkles,
+  Code,
 } from 'lucide-react';
 import { Badge } from '../components/common/Badge';
 
@@ -78,34 +80,41 @@ export const Home: React.FC = () => {
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-16">
+            <Link
+              to="/workflow"
+              className="px-6 py-3.5 rounded-xl font-bold text-sm bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 transition-all shadow-lg shadow-teal-500/25 flex items-center gap-2"
+            >
+              <Sparkles className="w-4 h-4 text-slate-950" />
+              <span>AI Planning Workflow</span>
+            </Link>
             <Link
               to="/site"
-              className="px-6 py-3.5 rounded-xl font-bold text-sm bg-teal-500 hover:bg-teal-400 text-slate-950 transition-all shadow-lg shadow-teal-500/25 flex items-center gap-2"
+              className="px-5 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all flex items-center gap-2"
             >
-              <Compass className="w-4 h-4" />
+              <Compass className="w-4 h-4 text-teal-300" />
               <span>Explore Site (1.28 km²)</span>
             </Link>
             <Link
               to="/proposals"
-              className="px-6 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all flex items-center gap-2"
+              className="px-5 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all flex items-center gap-2"
             >
               <Layers className="w-4 h-4 text-teal-300" />
               <span>View Proposals</span>
             </Link>
             <Link
-              to="/analysis"
-              className="px-6 py-3.5 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all flex items-center gap-2"
+              to="/open-source"
+              className="px-5 py-3.5 rounded-xl font-semibold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all flex items-center gap-2"
             >
-              <BarChart2 className="w-4 h-4 text-amber-300" />
-              <span>Forma Analysis (8 Modules)</span>
+              <Code className="w-4 h-4 text-emerald-300" />
+              <span>Open Source & AI</span>
             </Link>
             <button
               onClick={() => generateProjectSummaryPDF(data)}
-              className="px-5 py-3.5 rounded-xl font-semibold text-sm bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-2"
+              className="px-4 py-3.5 rounded-xl font-semibold text-sm bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center gap-2"
             >
               <Download className="w-4 h-4 text-amber-400" />
-              <span>Download Summary PDF</span>
+              <span>Summary PDF</span>
             </button>
           </div>
 
