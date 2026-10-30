@@ -63,7 +63,7 @@
       "title": "Site Limits",
       "description": "Precisely delineated 1.28 km² site boundary exceeding the 1.0 km² minimum site planning threshold. Georeferenced in EPSG:4326 with full setback offsets.",
       "status": "Verified",
-      "supportingScreenshot": "/assets/aistudio/image_01810530.png",
+      "supportingScreenshot": "/images/masterplan_preview.webp",
       "relatedProposal": "All Proposals",
       "evidenceLink": "",
       "dataSource": "TEAM VERIFIED"
@@ -73,7 +73,7 @@
       "title": "Landscaping & Green Infrastructure",
       "description": "Urban forest belt, sponge city rain bioswales, pedestrian shade canopy, and 34% active permeable green cover in the selected proposal.",
       "status": "Verified",
-      "supportingScreenshot": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "supportingScreenshot": "/images/smart_city_biophilic_tod.webp",
       "relatedProposal": "Proposal A",
       "evidenceLink": "",
       "dataSource": "TEAM VERIFIED"
@@ -83,7 +83,7 @@
       "title": "Buildings & Massing",
       "description": "Iterative building massing optimized in Forma for daylight penetration and natural ventilation, transitioning from 14-story central towers to 4-story perimeter blocks.",
       "status": "Verified",
-      "supportingScreenshot": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "supportingScreenshot": "/images/smart_city_simulation.webp",
       "relatedProposal": "Proposal A & B",
       "evidenceLink": "",
       "dataSource": "TEAM VERIFIED"
@@ -93,7 +93,7 @@
       "title": "Transportation & Mobility",
       "description": "Multi-tier transit network: Dedicated EV bus rapid lane, grade-separated cycle highways, 15-minute walkable residential quadrants, and peripheral park-and-ride hubs.",
       "status": "Verified",
-      "supportingScreenshot": "/src/assets/images/smart_city_bim_twin_1793350077263.jpg",
+      "supportingScreenshot": "/images/smart_city_bim_twin.webp",
       "relatedProposal": "Proposal A",
       "evidenceLink": "",
       "dataSource": "TEAM VERIFIED"
@@ -120,9 +120,9 @@
         { "name": "Transit & Green Mobility Corridors", "percent": 7, "color": "#6366F1", "areaM2": 28840 }
       ],
       "formaScreenshots": [
-        "/assets/aistudio/image_01810530.png",
-        "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
-        "/src/assets/images/smart_city_simulation_1793350043248.jpg"
+        "/images/masterplan_preview.webp",
+        "/images/smart_city_biophilic_tod.webp",
+        "/images/smart_city_simulation.webp"
       ],
       "teamNotes": "Achieved 18% lower embodied carbon than baseline through optimized volume-to-envelope ratios and engineered timber podium structures.",
       "metrics": {
@@ -157,8 +157,8 @@
         { "name": "Circulation & Service Roads", "percent": 8, "color": "#6366F1", "areaM2": 27040 }
       ],
       "formaScreenshots": [
-        "/src/assets/images/smart_city_simulation_1793350043248.jpg",
-        "/src/assets/images/smart_city_bim_twin_1793350077263.jpg"
+        "/images/smart_city_simulation.webp",
+        "/images/smart_city_bim_twin.webp"
       ],
       "teamNotes": "Excels in daylight uniformity across all units, but incurs higher building envelope area resulting in marginally higher embodied carbon.",
       "metrics": {
@@ -179,7 +179,7 @@
       "id": "area-metrics",
       "title": "Area Metrics & Density",
       "whatItMeasures": "Gross Floor Area (GFA), Building Footprint, Site Coverage Ratio, and Floor Area Ratio (FAR) evaluated against municipal master plan zoning limits.",
-      "formaScreenshot": "/assets/aistudio/image_01810530.png",
+      "formaScreenshot": "/images/masterplan_preview.webp",
       "proposalAResults": "GFA: 412,000 m² | Footprint: 142,000 m² | FAR: 3.22 | Ground Coverage: 28.4%",
       "proposalBResults": "GFA: 338,000 m² | Footprint: 178,000 m² | FAR: 2.64 | Ground Coverage: 35.6%",
       "unit": "m² / Ratio",
@@ -198,7 +198,7 @@
       "id": "embodied-carbon",
       "title": "Embodied Carbon Analysis",
       "whatItMeasures": "Estimated cradle-to-gate upfront embodied greenhouse gas emissions per square meter of gross floor area (kg CO₂e/m²) calculated via Forma Embodied Carbon Beta.",
-      "formaScreenshot": "/src/assets/images/smart_city_bim_twin_1793350077263.jpg",
+      "formaScreenshot": "/images/smart_city_bim_twin.webp",
       "proposalAResults": "385 kg CO₂e/m² (Total: ~158,620 t CO₂e across development lifecycle)",
       "proposalBResults": "432 kg CO₂e/m² (Total: ~146,016 t CO₂e across development lifecycle)",
       "unit": "kg CO₂e/m²",
@@ -217,7 +217,7 @@
       "id": "sun-hours",
       "title": "Sun Hours Analysis",
       "whatItMeasures": "Direct sunlight hours received on ground surfaces, public plazas, and building facades during critical equinox (March 21) and summer solstice (June 21).",
-      "formaScreenshot": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "formaScreenshot": "/images/smart_city_simulation.webp",
       "proposalAResults": "Public parks average 5.4 hours direct sun; deep street canyons shaded during peak noon hours (11:00 - 14:00).",
       "proposalBResults": "Central courtyards average 6.1 hours direct sun; perimeter blocks experience higher direct heat load.",
       "unit": "Hours / Day",
@@ -236,7 +236,7 @@
       "id": "daylight-potential",
       "title": "Daylight Potential",
       "whatItMeasures": "Percentage of internal occupied floor plate receiving adequate natural daylight (Daylight Factor ≥ 2.0% or Spatial Daylight Autonomy sDA 300/50% > 55%).",
-      "formaScreenshot": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "formaScreenshot": "/images/smart_city_simulation.webp",
       "proposalAResults": "74.8% of gross residential and commercial floor area meets optimal daylighting criteria.",
       "proposalBResults": "81.2% of occupied floor area meets daylight criteria due to narrower building depths.",
       "unit": "% Floor Area",
@@ -254,7 +254,7 @@
       "id": "wind-analysis",
       "title": "Wind Comfort & Aerodynamics",
       "whatItMeasures": "Pedestrian-level wind comfort using Computational Fluid Dynamics (CFD) under Lawson Criteria (Sitting, Standing, Strolling, Uncomfortable) driven by prevailing SW summer winds.",
-      "formaScreenshot": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "formaScreenshot": "/images/smart_city_simulation.webp",
       "proposalAResults": "88% of pedestrian zones classified as 'Comfortable for Sitting/Standing' (0.5 - 2.8 m/s); zero dangerous downwash vortex spots.",
       "proposalBResults": "79% comfortable; minor corner acceleration (>5.2 m/s) noted at northeast superblock edge.",
       "unit": "Comfort Index / m/s",
@@ -272,7 +272,7 @@
       "id": "microclimate",
       "title": "Microclimate & Thermal Comfort",
       "whatItMeasures": "Universal Thermal Climate Index (UTCI) perceived outdoor temperature combining solar radiation, wind speed, relative humidity, and surface emissivity.",
-      "formaScreenshot": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "formaScreenshot": "/images/smart_city_biophilic_tod.webp",
       "proposalAResults": "Peak summer perceived temperature reduced by 3.2°C in shaded green corridors compared to bare urban baseline.",
       "proposalBResults": "Peak summer perceived temperature reduced by 2.1°C; central courtyards function as moderate nocturnal heat traps.",
       "unit": "°C UTCI Variance",
@@ -292,7 +292,7 @@
       "id": "noise-analysis",
       "title": "Noise Analysis & Acoustic Comfort",
       "whatItMeasures": "Traffic and urban noise propagation in dBA from the southern arterial road across residential facades and public open recreational spaces.",
-      "formaScreenshot": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "formaScreenshot": "/images/smart_city_biophilic_tod.webp",
       "proposalAResults": "Residential interior buffer zones maintain 48.5 dBA average; acoustic earth berm and commercial podium block arterial noise.",
       "proposalBResults": "52.1 dBA average; reflection off hard courtyard facades elevates interior reverberation slightly.",
       "unit": "dBA",
@@ -310,7 +310,7 @@
       "id": "solar-energy",
       "title": "Solar Energy & PV Potential",
       "whatItMeasures": "Annual incident solar radiation (kWh/m²/year) on usable rooftop and building integrated photovoltaic (BIPV) facade surfaces for clean on-site power generation.",
-      "formaScreenshot": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "formaScreenshot": "/images/smart_city_simulation.webp",
       "proposalAResults": "1,420 kWh/m²/year rooftop yield; potential generation of ~18.4 GWh/year supplying 36% of total operational demand.",
       "proposalBResults": "1,580 kWh/m²/year rooftop yield; potential generation of ~21.2 GWh/year supplying 43% of total operational demand.",
       "unit": "kWh/m²/year",
@@ -348,7 +348,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "wind-analysis",
-      "evidenceImage": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "evidenceImage": "/images/smart_city_biophilic_tod.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -359,7 +359,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "noise-analysis",
-      "evidenceImage": "/src/assets/images/smart_city_bim_twin_1793350077263.jpg",
+      "evidenceImage": "/images/smart_city_bim_twin.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -370,7 +370,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "microclimate",
-      "evidenceImage": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "evidenceImage": "/images/smart_city_biophilic_tod.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -381,7 +381,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "solar-energy",
-      "evidenceImage": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "evidenceImage": "/images/smart_city_simulation.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -392,7 +392,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "area-metrics",
-      "evidenceImage": "/assets/aistudio/image_01810530.png",
+      "evidenceImage": "/images/masterplan_preview.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -403,7 +403,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "wind-analysis",
-      "evidenceImage": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "evidenceImage": "/images/smart_city_simulation.webp",
       "dataSource": "TEAM VERIFIED"
     },
     {
@@ -414,7 +414,7 @@
       "status": "Verified",
       "relatedProposal": "Proposal A",
       "relatedAnalysis": "area-metrics",
-      "evidenceImage": "/assets/aistudio/image_01810530.png",
+      "evidenceImage": "/images/masterplan_preview.webp",
       "dataSource": "TEAM VERIFIED"
     }
   ],
@@ -505,7 +505,7 @@
       "title": "Master Site Zoning in Autodesk Forma",
       "caption": "Site boundary delimitation covering 1.28 km² with road infrastructure and parcel subdivision.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/assets/aistudio/image_01810530.png",
+      "imageUrl": "/images/masterplan_preview.webp",
       "proposalId": "prop-a"
     },
     {
@@ -514,7 +514,7 @@
       "title": "Proposal A: High-Density Transit Spine",
       "caption": "Axonometric view of stepped tower massing and green pedestrian boulevard.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg",
+      "imageUrl": "/images/smart_city_biophilic_tod.webp",
       "proposalId": "prop-a"
     },
     {
@@ -523,7 +523,7 @@
       "title": "Proposal B: Polycentric Courtyards",
       "caption": "Distributed mid-rise courtyard geometry optimized for localized shaded courtyards.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
+      "imageUrl": "/images/smart_city_simulation.webp",
       "proposalId": "prop-b"
     },
     {
@@ -532,7 +532,7 @@
       "title": "Pedestrian Wind Comfort Analysis",
       "caption": "CFD wind velocity simulation under prevailing southwest wind vectors.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/src/assets/images/smart_city_simulation_1793350043248.jpg"
+      "imageUrl": "/images/smart_city_simulation.webp"
     },
     {
       "id": "gal-5",
@@ -540,7 +540,7 @@
       "title": "Solar Insolation & Radiation Heatmap",
       "caption": "Annual solar energy harvest simulation across rooftop surfaces.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/src/assets/images/smart_city_simulation_1793350043248.jpg"
+      "imageUrl": "/images/smart_city_simulation.webp"
     },
     {
       "id": "gal-6",
@@ -548,7 +548,7 @@
       "title": "Forma Board Side-by-Side Comparison",
       "caption": "Comparative matrix benchmarking embodied carbon, daylight factor, and solar yield.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/assets/aistudio/image_01810530.png"
+      "imageUrl": "/images/masterplan_preview.webp"
     },
     {
       "id": "gal-7",
@@ -556,7 +556,7 @@
       "title": "Revit Architectural Drawing Block",
       "caption": "Parametric floor plan, elevation, and structural grid generated from Forma site solids.",
       "sourceLabel": "TEAM VERIFIED",
-      "imageUrl": "/src/assets/images/smart_city_bim_twin_1793350077263.jpg"
+      "imageUrl": "/images/smart_city_bim_twin.webp"
     }
   ],
   "video": {
@@ -582,8 +582,8 @@
       { "order": 6, "title": "Prepare Building Drawing Block", "status": "Completed", "description": "Produce dimensioned 1:200 scale floor plans, sections, and elevation sheets with schedules." },
       { "order": 7, "title": "Validate Final Deliverables", "status": "Verified", "description": "Audit compliance against sustainable urban planning metrics with faculty review." }
     ],
-    "siteBimModelUrl": "/src/assets/images/smart_city_simulation_1793350043248.jpg",
-    "buildingDrawingBlockPreview": "/src/assets/images/smart_city_bim_twin_1793350077263.jpg",
+    "siteBimModelUrl": "/images/smart_city_simulation.webp",
+    "buildingDrawingBlockPreview": "/images/smart_city_bim_twin.webp",
     "revitSyncConfirmed": true,
     "teamEvidenceNotes": "Forma Site BIM successfully converted using Revit 2025 Forma Add-in. Core building Block A1 detailed with structural columns, shear walls, curtain wall glazing, and embodied carbon material schedules.",
     "deliverableStatus": {

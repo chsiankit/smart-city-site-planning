@@ -390,6 +390,8 @@ export const SiteOverview: React.FC = () => {
                       <img
                         src={elem.supportingScreenshot}
                         alt={elem.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover/img:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-80 group-hover/img:opacity-90 transition-opacity" />

@@ -61,12 +61,19 @@ export const Home: React.FC = () => {
       {/* 1. HERO SECTION WITH MASTERPLAN RENDERING BACKGROUND */}
       <section className="relative overflow-hidden bg-[#091521] text-white pt-16 pb-24 border-b border-teal-900/40">
         {/* User-Provided 1.28 km² Masterplan Aerial Perspective Background (Adjusted Transparency for High Visibility) */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <img
-            src="/assets/aistudio/image_01810530.png"
-            alt="Smart City Sustainable Masterplan Aerial Perspective"
-            className="w-full h-full object-cover object-center scale-105 animate-kenburns opacity-80 dark:opacity-75 filter brightness-100 contrast-105"
-          />
+        <div className="absolute inset-0 z-0 overflow-hidden bg-[#091521]">
+          <picture>
+            <source srcSet="/images/masterplan_preview.webp" type="image/webp" />
+            <img
+              src="/images/masterplan_preview.jpg"
+              alt="Smart City Sustainable Masterplan Aerial Perspective"
+              loading="eager"
+              decoding="async"
+              // @ts-expect-error fetchpriority standard attribute in modern browsers
+              fetchpriority="high"
+              className="w-full h-full object-cover object-center scale-105 animate-kenburns opacity-80 dark:opacity-75 filter brightness-100 contrast-105"
+            />
+          </picture>
           {/* Subtle translucent gradient scrim so the aerial city layout, lush green parks, and stadiums are clearly visible */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#091521]/75 via-[#102A43]/50 to-[#091521]/80 pointer-events-none" />
           <div className="absolute inset-0 bg-blueprint-grid opacity-20 pointer-events-none" />
@@ -443,11 +450,16 @@ export const Home: React.FC = () => {
 
             {/* Modal Image */}
             <div className="flex-1 overflow-auto bg-black flex items-center justify-center p-2">
-              <img
-                src="/assets/aistudio/image_01810530.png"
-                alt="Smart City Masterplan Perspective Full Resolution"
-                className="max-w-full max-h-[76vh] object-contain rounded-xl shadow-2xl"
-              />
+              <picture>
+                <source srcSet="/images/masterplan_hero.webp" type="image/webp" />
+                <img
+                  src="/images/masterplan_hero.jpg"
+                  alt="Smart City Masterplan Perspective Full Resolution"
+                  loading="lazy"
+                  decoding="async"
+                  className="max-w-full max-h-[76vh] object-contain rounded-xl shadow-2xl"
+                />
+              </picture>
             </div>
 
             {/* Modal Footer */}

@@ -21,6 +21,7 @@ export interface ShowcaseSlide {
   subtitle: string;
   category: string;
   image: string;
+  thumbnail?: string;
   description: string;
   metrics: { label: string; value: string; unit?: string }[];
   icon: React.ReactNode;
@@ -32,6 +33,7 @@ export const TopicAnimationShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [lightboxImage, setLightboxImage] = useState<ShowcaseSlide | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const topicSlides: ShowcaseSlide[] = [
@@ -40,7 +42,8 @@ export const TopicAnimationShowcase: React.FC = () => {
       title: t('showcase.slide1Title'),
       subtitle: t('showcase.slide1Subtitle'),
       category: t('showcase.slide1Category'),
-      image: '/assets/aistudio/image_01810530.png',
+      image: '/images/masterplan_preview.webp',
+      thumbnail: '/images/masterplan_thumb.webp',
       description: t('showcase.slide1Desc'),
       metrics: [
         { label: 'Site Footprint', value: '1.28', unit: 'km²' },
@@ -55,7 +58,8 @@ export const TopicAnimationShowcase: React.FC = () => {
       title: t('showcase.slide2Title'),
       subtitle: t('showcase.slide2Subtitle'),
       category: t('showcase.slide2Category'),
-      image: '/src/assets/images/smart_city_simulation_1793350043248.jpg',
+      image: '/images/smart_city_simulation.webp',
+      thumbnail: '/images/smart_city_simulation_thumb.webp',
       description: t('showcase.slide2Desc'),
       metrics: [
         { label: 'Solar Potential', value: '1,450', unit: 'kWh/m²' },
@@ -70,7 +74,8 @@ export const TopicAnimationShowcase: React.FC = () => {
       title: t('showcase.slide3Title'),
       subtitle: t('showcase.slide3Subtitle'),
       category: t('showcase.slide3Category'),
-      image: '/src/assets/images/smart_city_biophilic_tod_1793350061514.jpg',
+      image: '/images/smart_city_biophilic_tod.webp',
+      thumbnail: '/images/smart_city_biophilic_tod_thumb.webp',
       description: t('showcase.slide3Desc'),
       metrics: [
         { label: 'Transit Walking Radius', value: '400', unit: 'meters' },
@@ -85,7 +90,8 @@ export const TopicAnimationShowcase: React.FC = () => {
       title: t('showcase.slide4Title'),
       subtitle: t('showcase.slide4Subtitle'),
       category: t('showcase.slide4Category'),
-      image: '/src/assets/images/smart_city_bim_twin_1793350077263.jpg',
+      image: '/images/smart_city_bim_twin.webp',
+      thumbnail: '/images/smart_city_bim_twin_thumb.webp',
       description: t('showcase.slide4Desc'),
       metrics: [
         { label: 'Embodied Carbon', value: '-10.9%', unit: 'vs baseline' },
@@ -175,14 +181,26 @@ export const TopicAnimationShowcase: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
           {/* Left: Image Container with overlay & zoom */}
           <div
-            className="lg:col-span-8 relative min-h-[340px] sm:min-h-[460px] overflow-hidden group cursor-pointer"
+            className="lg:col-span-8 relative min-h-[340px] sm:min-h-[460px] overflow-hidden group cursor-pointer bg-slate-900"
             onClick={() => setLightboxImage(activeSlide)}
           >
+            {/* Shimmer Placeholder while image is loading */}
+            {!loadedImages[activeSlide.id] && (
+              <div className="absolute inset-0 bg-slate-800 animate-pulse flex items-center justify-center">
+                <span className="text-xs text-slate-500 font-mono">Loading simulation asset...</span>
+              </div>
+            )}
+
             <img
               key={activeSlide.id}
               src={activeSlide.image}
               alt={activeSlide.title}
-              className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
+              loading="eager"
+              decoding="async"
+              onLoad={() => setLoadedImages((prev) => ({ ...prev, [activeSlide.id]: true }))}
+              className={`w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105 ${
+                loadedImages[activeSlide.id] ? 'opacity-100' : 'opacity-0'
+              }`}
             />
             {/* Gradient Scrim */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
@@ -299,9 +317,11 @@ export const TopicAnimationShowcase: React.FC = () => {
                 }`}
               >
                 <img
-                  src={slide.image}
+                  src={slide.thumbnail || slide.image}
                   alt={slide.title}
-                  className="w-10 h-10 rounded-xl object-cover shrink-0 border border-slate-200 dark:border-slate-700"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-10 h-10 rounded-xl object-cover shrink-0 border border-slate-200 dark:border-slate-700 bg-slate-800"
                 />
                 <div className="truncate">
                   <span className="text-[10px] font-bold uppercase tracking-wider block text-slate-400">
