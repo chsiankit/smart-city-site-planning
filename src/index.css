@@ -1,79 +1,335 @@
 @import "tailwindcss";
 
+/* Enable class-based dark mode in Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --bg-primary: #f5f8fa;
+    --bg-primary: #f8fafc;
     --bg-card: #ffffff;
-    --text-primary: #102a43;
-    --text-secondary: #486581;
-    --border-color: #d9e2ec;
-    --accent-teal: #0f766e;
-    --accent-amber: #e8a34a;
-    --accent-navy: #102a43;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-color: #e2e8f0;
+    
+    /* Default: Ocean Blue theme */
+    --theme-primary: #0284c7;
+    --theme-primary-hover: #0369a1;
+    --theme-primary-light: #e0f2fe;
+    --theme-accent: #0f766e;
+    --theme-accent-light: #ccfbf1;
+    --theme-ring: rgba(2, 132, 199, 0.4);
+    --theme-gradient-from: #0284c7;
+    --theme-gradient-to: #0f766e;
   }
 
+  /* Theme: Emerald Green */
+  [data-theme="emerald-green"] {
+    --theme-primary: #059669;
+    --theme-primary-hover: #047857;
+    --theme-primary-light: #d1fae5;
+    --theme-accent: #10b981;
+    --theme-accent-light: #a7f3d0;
+    --theme-ring: rgba(5, 150, 105, 0.4);
+    --theme-gradient-from: #059669;
+    --theme-gradient-to: #10b981;
+  }
+
+  /* Theme: Midnight Purple */
+  [data-theme="midnight-purple"] {
+    --theme-primary: #7c3aed;
+    --theme-primary-hover: #6d28d9;
+    --theme-primary-light: #ede9fe;
+    --theme-accent: #8b5cf6;
+    --theme-accent-light: #ddd6fe;
+    --theme-ring: rgba(124, 58, 237, 0.4);
+    --theme-gradient-from: #7c3aed;
+    --theme-gradient-to: #a855f7;
+  }
+
+  /* Theme: Sunset Orange */
+  [data-theme="sunset-orange"] {
+    --theme-primary: #ea580c;
+    --theme-primary-hover: #c2410c;
+    --theme-primary-light: #ffedd5;
+    --theme-accent: #f97316;
+    --theme-accent-light: #fed7aa;
+    --theme-ring: rgba(234, 88, 12, 0.4);
+    --theme-gradient-from: #ea580c;
+    --theme-gradient-to: #f59e0b;
+  }
+
+  /* Theme: Minimal Slate */
+  [data-theme="minimal-neutral"] {
+    --theme-primary: #334155;
+    --theme-primary-hover: #1e293b;
+    --theme-primary-light: #f1f5f9;
+    --theme-accent: #64748b;
+    --theme-accent-light: #e2e8f0;
+    --theme-ring: rgba(71, 85, 105, 0.4);
+    --theme-gradient-from: #334155;
+    --theme-gradient-to: #64748b;
+  }
+
+  /* Dark mode root variables */
   .dark {
-    --bg-primary: #091521;
-    --bg-card: #102a43;
-    --text-primary: #f0f4f8;
-    --text-secondary: #9fb3c8;
-    --border-color: #243b53;
-    --accent-teal: #14b8a6;
-    --accent-amber: #f59e0b;
-    --accent-navy: #091521;
+    --bg-primary: #0b1120;
+    --bg-card: #0f172a;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #1e293b;
   }
 
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
     overflow-x: hidden;
   }
 }
 
-/* Architectural blueprint grid */
+/* ==========================================================
+   EXPLICIT LIGHT & DARK MODE SYSTEM STYLING
+   ========================================================== */
+
+html.dark {
+  color-scheme: dark;
+}
+html:not(.dark) {
+  color-scheme: light;
+}
+
+/* Light mode overrides for structural elements */
+html:not(.dark) body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html:not(.dark) .dark-bg-target {
+  background-color: #ffffff !important;
+}
+
+/* ==========================================================
+   DYNAMIC THEME COLOR PALETTE OVERRIDES
+   Ensures all site buttons, badges, highlights, and borders
+   instantly recolor when a theme palette is chosen.
+   ========================================================== */
+
+/* 1. Emerald Green Palette */
+[data-theme="emerald-green"] .text-teal-600,
+[data-theme="emerald-green"] .text-teal-500,
+[data-theme="emerald-green"] .text-teal-400,
+[data-theme="emerald-green"] .text-teal-300 {
+  color: #059669 !important;
+}
+.dark[data-theme="emerald-green"] .text-teal-400,
+.dark[data-theme="emerald-green"] .text-teal-300 {
+  color: #34d399 !important;
+}
+
+[data-theme="emerald-green"] .bg-teal-600,
+[data-theme="emerald-green"] .bg-teal-500 {
+  background-color: #059669 !important;
+}
+[data-theme="emerald-green"] .hover\:bg-teal-700:hover,
+[data-theme="emerald-green"] .hover\:bg-teal-600:hover {
+  background-color: #047857 !important;
+}
+
+[data-theme="emerald-green"] .border-teal-500,
+[data-theme="emerald-green"] .border-teal-400,
+[data-theme="emerald-green"] .border-teal-300,
+[data-theme="emerald-green"] .border-teal-200 {
+  border-color: #10b981 !important;
+}
+
+[data-theme="emerald-green"] .from-teal-600,
+[data-theme="emerald-green"] .from-teal-500 {
+  --tw-gradient-from: #059669 !important;
+}
+[data-theme="emerald-green"] .to-teal-950,
+[data-theme="emerald-green"] .to-emerald-600 {
+  --tw-gradient-to: #047857 !important;
+}
+
+/* 2. Midnight Purple Palette */
+[data-theme="midnight-purple"] .text-teal-600,
+[data-theme="midnight-purple"] .text-teal-500,
+[data-theme="midnight-purple"] .text-teal-400,
+[data-theme="midnight-purple"] .text-teal-300 {
+  color: #7c3aed !important;
+}
+.dark[data-theme="midnight-purple"] .text-teal-400,
+.dark[data-theme="midnight-purple"] .text-teal-300 {
+  color: #a78bfa !important;
+}
+
+[data-theme="midnight-purple"] .bg-teal-600,
+[data-theme="midnight-purple"] .bg-teal-500 {
+  background-color: #7c3aed !important;
+}
+[data-theme="midnight-purple"] .hover\:bg-teal-700:hover,
+[data-theme="midnight-purple"] .hover\:bg-teal-600:hover {
+  background-color: #6d28d9 !important;
+}
+
+[data-theme="midnight-purple"] .border-teal-500,
+[data-theme="midnight-purple"] .border-teal-400,
+[data-theme="midnight-purple"] .border-teal-300,
+[data-theme="midnight-purple"] .border-teal-200 {
+  border-color: #8b5cf6 !important;
+}
+
+[data-theme="midnight-purple"] .from-teal-600,
+[data-theme="midnight-purple"] .from-teal-500 {
+  --tw-gradient-from: #7c3aed !important;
+}
+[data-theme="midnight-purple"] .to-teal-950,
+[data-theme="midnight-purple"] .to-emerald-600 {
+  --tw-gradient-to: #4c1d95 !important;
+}
+
+/* 3. Sunset Orange Palette */
+[data-theme="sunset-orange"] .text-teal-600,
+[data-theme="sunset-orange"] .text-teal-500,
+[data-theme="sunset-orange"] .text-teal-400,
+[data-theme="sunset-orange"] .text-teal-300 {
+  color: #ea580c !important;
+}
+.dark[data-theme="sunset-orange"] .text-teal-400,
+.dark[data-theme="sunset-orange"] .text-teal-300 {
+  color: #fb923c !important;
+}
+
+[data-theme="sunset-orange"] .bg-teal-600,
+[data-theme="sunset-orange"] .bg-teal-500 {
+  background-color: #ea580c !important;
+}
+[data-theme="sunset-orange"] .hover\:bg-teal-700:hover,
+[data-theme="sunset-orange"] .hover\:bg-teal-600:hover {
+  background-color: #c2410c !important;
+}
+
+[data-theme="sunset-orange"] .border-teal-500,
+[data-theme="sunset-orange"] .border-teal-400,
+[data-theme="sunset-orange"] .border-teal-300,
+[data-theme="sunset-orange"] .border-teal-200 {
+  border-color: #f97316 !important;
+}
+
+[data-theme="sunset-orange"] .from-teal-600,
+[data-theme="sunset-orange"] .from-teal-500 {
+  --tw-gradient-from: #ea580c !important;
+}
+[data-theme="sunset-orange"] .to-teal-950,
+[data-theme="sunset-orange"] .to-emerald-600 {
+  --tw-gradient-to: #b45309 !important;
+}
+
+/* 4. Minimal Slate Palette */
+[data-theme="minimal-neutral"] .text-teal-600,
+[data-theme="minimal-neutral"] .text-teal-500,
+[data-theme="minimal-neutral"] .text-teal-400,
+[data-theme="minimal-neutral"] .text-teal-300 {
+  color: #475569 !important;
+}
+.dark[data-theme="minimal-neutral"] .text-teal-400,
+.dark[data-theme="minimal-neutral"] .text-teal-300 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="minimal-neutral"] .bg-teal-600,
+[data-theme="minimal-neutral"] .bg-teal-500 {
+  background-color: #334155 !important;
+}
+[data-theme="minimal-neutral"] .hover\:bg-teal-700:hover,
+[data-theme="minimal-neutral"] .hover\:bg-teal-600:hover {
+  background-color: #1e293b !important;
+}
+
+[data-theme="minimal-neutral"] .border-teal-500,
+[data-theme="minimal-neutral"] .border-teal-400,
+[data-theme="minimal-neutral"] .border-teal-300,
+[data-theme="minimal-neutral"] .border-teal-200 {
+  border-color: #64748b !important;
+}
+
+[data-theme="minimal-neutral"] .from-teal-600,
+[data-theme="minimal-neutral"] .from-teal-500 {
+  --tw-gradient-from: #334155 !important;
+}
+[data-theme="minimal-neutral"] .to-teal-950,
+[data-theme="minimal-neutral"] .to-emerald-600 {
+  --tw-gradient-to: #0f172a !important;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Blueprint Grid */
 .bg-blueprint-grid {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(15, 118, 110, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 118, 110, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 118, 110, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 118, 110, 0.1) 1px, transparent 1px);
 }
 
 .dark .bg-blueprint-grid {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(20, 184, 166, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(20, 184, 166, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(20, 184, 166, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 184, 166, 0.08) 1px, transparent 1px);
 }
 
-/* Subtle architectural dot grid */
-.bg-cad-dots {
-  background-image: radial-gradient(rgba(16, 42, 67, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px;
+/* Smooth Ken Burns animation for hero masterplan */
+@keyframes kenburns {
+  0% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.08) translate(-0.5%, -0.5%);
+  }
+  100% {
+    transform: scale(1.02);
+  }
 }
-.dark .bg-cad-dots {
-  background-image: radial-gradient(rgba(159, 179, 200, 0.15) 1px, transparent 1px);
-  background-size: 20px 20px;
+
+.animate-kenburns {
+  animation: kenburns 28s ease-in-out infinite;
+}
+
+/* Subtle pulse for active badges */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.04);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(15, 118, 110, 0.4);
+  background: var(--theme-primary);
+  opacity: 0.5;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(15, 118, 110, 0.7);
+  background: var(--theme-primary-hover);
 }
 
-/* Leaflet map container fix */
+/* Leaflet map container */
 .leaflet-container {
   width: 100%;
   height: 100%;

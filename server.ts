@@ -54,9 +54,38 @@ function generateHeuristicResponse(
   siteContext?: any,
   proposalContext?: any
 ): string {
-  const pLower = prompt.toLowerCase();
+  const pLower = prompt.toLowerCase().trim();
   const siteArea = siteContext?.areaKm2 || '1.28';
   const siteName = siteContext?.name || 'Smart City Urban District';
+
+  // Conversational greetings & capability queries
+  if (
+    pLower === 'hi' ||
+    pLower === 'hello' ||
+    pLower === 'hey' ||
+    pLower.startsWith('hi ') ||
+    pLower.startsWith('hello ') ||
+    pLower.startsWith('hey ') ||
+    pLower.includes('who are you') ||
+    pLower.includes('what can you do') ||
+    pLower.includes('how are you') ||
+    pLower.includes('namaste') ||
+    pLower.includes('hola') ||
+    pLower.includes('bonjour') ||
+    pLower.includes('marhaban')
+  ) {
+    return `### Hello! Welcome to Smart City Site Planning
+
+I am your **Gemma 4 Planning Assistant**, specialized in computational urban design, microclimate engineering, and sustainable masterplanning.
+
+Here is how I can assist your team on the **${siteName}** (${siteArea} km²) project:
+1. **Forma Environmental Analysis:** Explain sDA daylight autonomy, pedestrian Lawson wind comfort, and rooftop solar irradiance.
+2. **Proposal Comparisons:** Evaluate trade-offs between **Proposal A (Biophilic TOD Core)** and **Proposal B (Microclimate Superblocks)**.
+3. **Zoning & Density Tuning:** Calculate optimal Floor Area Ratio (FAR), setback envelopes, and open space ratios.
+4. **BIM & Revit Workflows:** Provide guidance on georeferenced IFC exports from Forma into Autodesk Revit 2025 structural models.
+
+Try asking: *"How does Proposal A maximize transit access?"* or *"What are the recommended setbacks for winter daylighting?"*`;
+  }
 
   if (taskType === 'green_infra' || pLower.includes('green') || pLower.includes('park') || pLower.includes('biophilic')) {
     return `### Heuristic Urban Planning Analysis: Green Infrastructure & Public Space
@@ -115,7 +144,7 @@ function generateHeuristicResponse(
 
 // Gemma 4 Interactive Chat Endpoint
 app.post('/api/gemma/chat', async (req: Request, res: Response) => {
-  const { prompt, messages, siteContext, proposalContext, taskType } = req.body;
+  const { prompt, messages, siteContext, proposalContext, taskType, language } = req.body;
 
   if (!prompt || typeof prompt !== 'string' || prompt.trim() === '') {
     res.status(400).json({ error: 'A non-empty prompt is required.' });
@@ -144,6 +173,10 @@ app.post('/api/gemma/chat', async (req: Request, res: Response) => {
       ? `Proposal Context: Active=${proposalContext.activeProposal || 'Proposal A'}, Metrics=${JSON.stringify(proposalContext.metrics || {})}.`
       : '';
 
+    const langInstruction = language && language !== 'en'
+      ? `Language Requirement: The user has selected '${language}'. You MUST respond in the appropriate language (e.g. Hindi in Devanagari script for 'hi', Bengali in Bengali script for 'bn', Spanish for 'es', French for 'fr', Arabic in Arabic script for 'ar').`
+      : '';
+
     const systemInstruction = `You are the Gemma 4 Smart City Planning Assistant, an expert open-source AI advisor specializing in sustainable site design, computational urban planning, and architecture.
 Your expertise covers:
 - Autodesk Forma environmental simulations (Daylight Autonomy, CFD Wind Lawson Comfort, Sun Hours, UTCI Microclimate, Embodied Carbon, Solar PV Yield).
@@ -157,7 +190,8 @@ Guidelines:
 - Provide concrete metrics and spatial strategies.
 - Keep answers professional, structured, and directly applicable to architectural and municipal planners.
 - ${siteSummary}
-- ${proposalSummary}`;
+- ${proposalSummary}
+- ${langInstruction}`;
 
     // Format prompt and conversation history
     const historyText = Array.isArray(messages) && messages.length > 0

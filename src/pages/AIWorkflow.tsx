@@ -29,7 +29,7 @@ export const AIWorkflow: React.FC = () => {
   // Step 1: Site Info
   const [siteInfo, setSiteInfo] = useState({
     name: data.site.name,
-    area: `${data.site.areaKm2} km²`,
+    area: `${data.site.manuallyStatedAreaKm2 || 1.28} km²`,
     location: data.site.location,
     terrain: 'Flat alluvial urban floodplain',
     existingUse: 'Brownfield industrial redevelopment',

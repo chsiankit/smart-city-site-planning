@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, ExternalLink, Building, Heart } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { ShieldCheck, ExternalLink, Building } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="w-full bg-[#091521] text-slate-300 border-t border-slate-800">
       {/* Mandatory Non-Negotiable Authenticity Banner */}
@@ -33,43 +36,42 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              An integrated urban planning initiative exploring sustainable land utilization, environmental performance, intelligent transportation, green infrastructure, and resilient urban development using Autodesk Forma and Revit.
+              {t('hero.description')}
             </p>
             <div className="text-[11px] space-y-1 text-slate-400">
               <p><strong className="text-slate-300">Software:</strong> Autodesk Forma & Revit 2025</p>
-              <p><strong className="text-slate-300">Focus:</strong> Sustainable & Resilient Urban Design</p>
+              <p><strong className="text-slate-300">Developer:</strong> Ankit Yadav (AkkiCoder)</p>
             </div>
           </div>
 
           {/* Col 2: Core Project Navigation */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">
-              Project Navigation
+              {t('nav.home')} & Navigation
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><Link to="/site" className="hover:text-teal-300 transition-colors">Site Overview & 1.28 km² Boundary</Link></li>
-              <li><Link to="/proposals" className="hover:text-teal-300 transition-colors">Forma Proposals (A & B)</Link></li>
-              <li><Link to="/analysis" className="hover:text-teal-300 transition-colors">8 Forma Analysis Modules</Link></li>
-              <li><Link to="/compare" className="hover:text-teal-300 transition-colors">Forma Board Comparison</Link></li>
-              <li><Link to="/smart-city" className="hover:text-teal-300 transition-colors">Smart City Features</Link></li>
-              <li><Link to="/revit-bim" className="hover:text-teal-300 transition-colors">Autodesk Revit & BIM Pipeline</Link></li>
+              <li><Link to="/site" className="hover:text-teal-300 transition-colors">{t('nav.site')} (1.28 km²)</Link></li>
+              <li><Link to="/proposals" className="hover:text-teal-300 transition-colors">{t('nav.proposals')}</Link></li>
+              <li><Link to="/analysis" className="hover:text-teal-300 transition-colors">{t('nav.analysis')}</Link></li>
+              <li><Link to="/compare" className="hover:text-teal-300 transition-colors">{t('nav.compare')}</Link></li>
+              <li><Link to="/smart-city" className="hover:text-teal-300 transition-colors">{t('nav.smartCity')}</Link></li>
+              <li><Link to="/revit-bim" className="hover:text-teal-300 transition-colors">{t('nav.revitBim')}</Link></li>
             </ul>
           </div>
 
           {/* Col 3: Deliverables */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-teal-400">
-              Project Deliverables
+              AI & Architecture
             </h4>
             <ul className="space-y-2 text-xs">
-              <li><Link to="/workflow" className="hover:text-teal-300 transition-colors text-amber-300 font-semibold">AI Planning Workflow (Gemma 4)</Link></li>
-              <li><Link to="/open-source" className="hover:text-teal-300 transition-colors text-emerald-300 font-semibold">Open Source & AI (Hacktoberfest)</Link></li>
-              <li><Link to="/tracker" className="hover:text-teal-300 transition-colors">Project Progress & Checklist</Link></li>
-              <li><Link to="/gallery" className="hover:text-teal-300 transition-colors">30-Second Walkthrough Video</Link></li>
-              <li><Link to="/team" className="hover:text-teal-300 transition-colors">Team & Academic Resources</Link></li>
-              <li><Link to="/about" className="hover:text-teal-300 transition-colors">Methodology & Sustainability</Link></li>
-              <li><Link to="/admin" className="hover:text-teal-300 transition-colors">Project Editor & Schema Validator</Link></li>
-              <li><Link to="/contact" className="hover:text-teal-300 transition-colors">Contact & Academic Inquiries</Link></li>
+              <li><Link to="/ai-workflow" className="hover:text-teal-300 transition-colors text-amber-300 font-semibold">{t('nav.aiWorkflow')} (Gemma 4)</Link></li>
+              <li><Link to="/open-source-ai" className="hover:text-teal-300 transition-colors text-emerald-300 font-semibold">{t('nav.openSourceAi')}</Link></li>
+              <li><Link to="/tracker" className="hover:text-teal-300 transition-colors">Project Progress & Tracker</Link></li>
+              <li><Link to="/gallery" className="hover:text-teal-300 transition-colors">{t('nav.gallery')}</Link></li>
+              <li><Link to="/team" className="hover:text-teal-300 transition-colors">{t('nav.team')}</Link></li>
+              <li><Link to="/about" className="hover:text-teal-300 transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/admin" className="hover:text-teal-300 transition-colors">{t('nav.projectEditor')}</Link></li>
             </ul>
           </div>
 
@@ -96,7 +98,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>
-            Independent Smart City Planning & Architectural Development Project.
+            Independent Smart City Planning & Architectural Development Project • Solo Developer: Ankit Yadav (AkkiCoder).
           </p>
           <div className="flex items-center gap-4">
             <a

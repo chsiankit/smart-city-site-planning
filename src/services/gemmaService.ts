@@ -73,7 +73,8 @@ export async function sendGemmaChatMessage(
   history: GemmaMessage[] = [],
   siteContext?: any,
   proposalContext?: any,
-  taskType?: string
+  taskType?: string,
+  language?: string
 ): Promise<GemmaChatResponse> {
   try {
     const formattedMessages = history.map((m) => ({
@@ -90,6 +91,7 @@ export async function sendGemmaChatMessage(
         siteContext,
         proposalContext,
         taskType,
+        language,
       }),
     });
 

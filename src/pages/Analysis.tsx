@@ -144,9 +144,9 @@ export const Analysis: React.FC = () => {
       {/* Embedded Gemma 4 Environmental Advisory Panel */}
       <GemmaAnalysisPanel
         activeModuleTitle={filteredAnalyses[0]?.title || 'Forma Environmental Simulation'}
-        activeModuleDescription={filteredAnalyses[0]?.description || 'Forma site analysis'}
+        activeModuleDescription={filteredAnalyses[0]?.whatItMeasures || 'Forma site analysis'}
         moduleMetrics={filteredAnalyses[0]?.chartData?.[0]}
-        siteAreaKm2={data.site.areaKm2}
+        siteAreaKm2={String(data.site.manuallyStatedAreaKm2 || 1.28)}
       />
 
       {/* Analysis Modules Grid */}

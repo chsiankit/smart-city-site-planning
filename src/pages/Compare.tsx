@@ -362,7 +362,7 @@ export const Compare: React.FC = () => {
       <GemmaComparisonAdvisor
         proposals={proposals.map((p) => ({ name: p.name, metrics: p.metrics }))}
         weights={customWeights}
-        siteAreaKm2={data.site.areaKm2}
+        siteAreaKm2={String(data.site.manuallyStatedAreaKm2 || 1.28)}
       />
 
       {/* Final Team Decision & Official Justification */}
